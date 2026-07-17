@@ -1,4 +1,6 @@
 ﻿using BepInEx;
+using System;
+using System.Text.RegularExpressions;
 
 namespace Blasphemous.LevelFrameworkExtended;
 
@@ -13,4 +15,14 @@ internal class Main : BaseUnityPlugin
     {
         LevelFrameworkExtended = new LevelFrameworkExtended();
     }
+
+    public static T Validate<T>(T obj, Func<T, bool> validate)
+    {
+        return validate(obj)
+            ? obj
+            : throw new System.Exception($"{obj} is an invalid argument");
+    }
+
+    public static readonly Regex floatRegex = new("^[+-]?((\\d+(\\.\\d*)?)|(\\.\\d+))$");
+    public static readonly Regex intRegex = new("^[+-]?\\d+$");
 }

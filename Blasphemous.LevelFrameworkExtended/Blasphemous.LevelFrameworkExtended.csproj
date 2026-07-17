@@ -26,6 +26,10 @@
     <PackageReference Include="Blasphemous.NewbieEltonLibs" Version="0.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ObjectLoaders\" />
+  </ItemGroup>
+
   <Target Name="Development" AfterTargets="PostBuildEvent">
 
     <!-- Get plugin & resources -->
