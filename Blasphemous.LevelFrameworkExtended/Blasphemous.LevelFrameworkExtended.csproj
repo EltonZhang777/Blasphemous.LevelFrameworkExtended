@@ -4,8 +4,8 @@
     <TargetFramework>net35</TargetFramework>
     <LangVersion>latest</LangVersion>
 
-    <Title>LevelFrameworkExtended</Title>
-    <Product>LevelFrameworkExtended</Product>
+    <Title>Level Framework Extended</Title>
+    <Product>Level Framework Extended</Product>
     <Authors>NewbieElton</Authors>
     <Company>NewbieElton</Company>
     <Description>Extended level tweaking support for Blasphemous 1.</Description>
@@ -15,7 +15,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>bin\$(Configuration)\$(TargetName).xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/Example</RepositoryUrl>
+    <RepositoryUrl>https://github.com/EltonZhang777/Blasphemous.LevelFrameworkExtended</RepositoryUrl>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
