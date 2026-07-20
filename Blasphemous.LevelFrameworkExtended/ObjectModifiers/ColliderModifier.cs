@@ -1,10 +1,10 @@
-﻿using Blasphemous.Framework.Levels;
+using Blasphemous.Framework.Levels;
 using Blasphemous.Framework.Levels.Modifiers;
-using Blasphemous.ModdingAPI;
-using System.Collections.Generic;
+using Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
 using UnityEngine;
 
 namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
+
 /// <summary>
 /// Modifier for solid objects that cannot be passed by TPO
 /// </summary>
@@ -38,35 +38,7 @@ public class ColliderModifer : FillableObjectModifier, IModifier
     /// </summary>
     public void Apply(GameObject obj, ObjectData data)
     {
-        _validPropertyArguments = new()
-        {
-            { "object_method", x => new List<string> {"single", "fill"}.Contains(x) },
-            { "x_boundary", x => new List<string> {"none", "inner", "outer", "exact"}.Contains(x) },
-            { "y_boundary", x => new List<string> {"none", "inner", "outer", "exact"}.Contains(x) },
-            { "x_adjust", x => new List<string> {"left", "right"}.Contains(x) },
-            { "y_adjust", x => new List<string> {"top", "bottom"}.Contains(x) },
-            { "top", x => Main.floatRegex.IsMatch(x) },
-            { "bottom", x => Main.floatRegex.IsMatch(x) },
-            { "left", x => Main.floatRegex.IsMatch(x) },
-            { "right", x => Main.floatRegex.IsMatch(x) },
-        };
-        _defaultPropertyArguments = new()
-        {
-            { "object_method", "single" },
-            { "x_boundary", "none" },
-            { "y_boundary", "none" },
-            { "x_adjust", "left" },
-            { "y_adjust", "top" }
-        };
-
-        _properties = UnzipProperties(data.properties);
-        if (_properties == null)
-        {
-            ModLog.Error($"Invalid properties specifications for {data.id}, " +
-                $"skipped registering object!");
-            UnityEngine.Object.Destroy(obj);
-            return;
-        }
+        var props = FillableProperties.Parse(data.properties);
 
         obj.name = $"{data.id}";
         obj.layer = LayerMask.NameToLayer(_layer);
@@ -74,15 +46,14 @@ public class ColliderModifer : FillableObjectModifier, IModifier
         collider.size = _size;
         collider.offset = _offset;
 
-        switch (_properties["object_method"])
+        switch (props.Method)
         {
-            case "single":
+            case FillableProperties.ObjectMethod.Single:
                 ApplySingleObject(obj, data);
                 break;
-            case "fill":
-                ApplyFillObjects(obj, data);
+            case FillableProperties.ObjectMethod.Fill:
+                ApplyFillObjects(obj, data, props);
                 break;
         }
     }
 }
-

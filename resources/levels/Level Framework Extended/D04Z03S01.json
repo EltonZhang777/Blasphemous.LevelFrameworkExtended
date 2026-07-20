@@ -1,0 +1,63 @@
+{
+    "additions": [
+        {
+            "type": "bell-face",
+            "id": "spike_001",
+            "position": {
+                "x": 355,
+                "y": 19.5
+            },
+            "rotation": {
+                "x": 0,
+                "y": 0,
+                "z": 30
+            }
+        },
+        {
+            "type": "platform-droppable-library",
+            "id": "p_001",
+            "position": {
+                "x": 367,
+                "y": 22
+            },
+            "rotation": {
+                "z": 0
+            }
+        },
+        {
+            "type": "platform-droppable-library",
+            "id": "p_002",
+            "position": {
+                "x": 369,
+                "y": 22
+            },
+            "rotation": {
+                "z": 0
+            }
+        },
+        {
+            "type": "platform-droppable-library",
+            "id": "p_003",
+            "position": {
+                "x": 371.12,
+                "y": 22.5
+            },
+            "rotation": {
+                "z": 30
+            }
+        },
+        {
+            "type": "ladder-jondo",
+            "id": "ladder_005",
+            "position": {
+                "x": 368,
+                "y": 21.5
+            },
+            "scale": {
+                "x": 1,
+                "y": 2,
+                "z": 1
+            }
+        }
+    ]
+}

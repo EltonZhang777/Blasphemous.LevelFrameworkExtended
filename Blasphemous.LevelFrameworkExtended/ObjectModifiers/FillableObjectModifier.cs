@@ -1,222 +1,180 @@
-﻿using Blasphemous.Framework.Levels;
+using Blasphemous.Framework.Levels;
+using Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
 using Blasphemous.ModdingAPI;
 using Tools.Level.Layout;
 using UnityEngine;
 
 namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
 
-public abstract class FillableObjectModifier : ModifierWithProperties
+public abstract class FillableObjectModifier
 {
-    protected int _numSegmentsX;
-    protected int _numSegmentsY;
+    private enum FillAxis { X, Y }
+
     protected Vector2 _size;
     protected Vector2 _offset;
 
-    protected void ApplySingleObject(GameObject obj, ObjectData data)
+    /// <summary>
+    /// No-op by default. Override to add custom behavior for single-object placement.
+    /// </summary>
+    protected virtual void ApplySingleObject(GameObject obj, ObjectData data)
     {
-        // since `Apply()` already applied a single object,
-        // nothing needs to be done here
     }
 
-    protected void ApplyFillObjects(GameObject obj, ObjectData data)
+    protected void ApplyFillObjects(GameObject obj, ObjectData data, FillableProperties props)
     {
-        // first, determine the boundary conditions
-        if (_properties["x_boundary"] == "none" && _properties["y_boundary"] == "none")
+        if (props.XBoundary == FillableProperties.BoundaryType.None
+            && props.YBoundary == FillableProperties.BoundaryType.None)
         {
-            // no boundary specified, abort
-
             ModLog.Error($"At least one boundary should be not `none`! " +
                 $"Skipped registering object!");
             UnityEngine.Object.Destroy(obj);
-            return;
         }
-        else if (_properties["x_boundary"] == "none" && _properties["y_boundary"] != "none")
+        else if (props.XBoundary == FillableProperties.BoundaryType.None
+            && props.YBoundary != FillableProperties.BoundaryType.None)
         {
-            // y_boundary specified, fill a vertical column of objects
-
-            // parse the string of top and bottom to floats
-            if (!_properties.TryGetValue("top", out string top_string))
-            {
-                ModLog.Error($"platform {data.id} top boundary not specified!\n" +
-                    $"Skipped registering object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-            if (!_properties.TryGetValue("bottom", out string bottom_string))
-            {
-                ModLog.Error($"platform {data.id} top boundary not specified!\n" +
-                    $"Skipped registering object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-            float top = float.Parse(top_string);
-            float bottom = float.Parse(bottom_string);
-
-            // calculate the integer number of segments based on tile length
-            // round number of segments based on `y_boundary`
-            if (_properties["y_boundary"] == "inner")
-            {
-                _numSegmentsY = (int)Mathf.Floor((top - bottom) / _size.y);
-            }
-            else if (_properties["y_boundary"] == "outer")
-            {
-                _numSegmentsY = (int)Mathf.Ceil((top - bottom) / _size.y);
-            }
-            else if (_properties["y_boundary"] == "exact")
-            {
-                float floatNumSegments = (top - bottom) / _size.y;
-                if (Mathf.Abs(floatNumSegments - Mathf.RoundToInt(floatNumSegments)) > 1e-3)
-                {
-                    ModLog.Error($"Ladder {data.id} has boundary condition `exact` " +
-                    $"but boundaries given are not exact!\n" +
-                    $"Skipped registering ladder object!");
-                    UnityEngine.Object.Destroy(obj);
-                    return;
-                }
-                _numSegmentsY = Mathf.RoundToInt(floatNumSegments);
-            }
-
-            if (_numSegmentsY <= 0)
-            {
-                ModLog.Error($"Ladder {data.id} top and bottom position " +
-                    $"specified is shorter than 1 segment!\n" +
-                    $"Skipped registering ladder object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-
-            // create `GameObject`s of each segment
-            // and adjust each segment's position based on `y_adjust`
-            if (_properties["y_adjust"] == "top")
-            {
-                for (int i = 0; i < _numSegmentsY; i++)
-                {
-                    GameObject newObject = UnityEngine.Object.Instantiate(
-                        obj,
-                        UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
-                    newObject.transform.position = new Vector3(
-                        obj.transform.position.x,
-                        top - ((i + 0.5f) * _size.y),
-                        0f);
-                    newObject.name = $"{data.id}_Segment_{i}";
-                }
-            }
-            else if (_properties["y_adjust"] == "bottom")
-            {
-                for (int i = 0; i < _numSegmentsY; i++)
-                {
-                    GameObject newObject = UnityEngine.Object.Instantiate(
-                        obj,
-                        UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
-                    newObject.transform.position = new Vector3(
-                        obj.transform.position.x,
-                        bottom + ((i + 0.5f) * _size.y),
-                        0f);
-                    newObject.name = $"{data.id}_Segment_{i}";
-                }
-            }
-
-            UnityEngine.Object.Destroy(obj); // destroy the original object
+            ApplyFillObjectsOnAxis(obj, data, props, FillAxis.Y);
         }
-        else if (_properties["x_boundary"] != "none" && _properties["y_boundary"] == "none")
+        else if (props.XBoundary != FillableProperties.BoundaryType.None
+            && props.YBoundary == FillableProperties.BoundaryType.None)
         {
-            // x_boundary specified, fill a horizontal row of objects
-
-            // parse the string of left and right to floats
-            if (!_properties.TryGetValue("left", out string left_string))
-            {
-                ModLog.Error($"platform {data.id} left boundary not specified!\n" +
-                    $"Skipped registering object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-            if (!_properties.TryGetValue("right", out string right_string))
-            {
-                ModLog.Error($"platform {data.id} top boundary not specified!\n" +
-                    $"Skipped registering object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-            float left = float.Parse(left_string);
-            float right = float.Parse(right_string);
-
-            // calculate the integer number of segments based on tile length
-            // round number of segments based on `x_boundary`
-            if (_properties["x_boundary"] == "inner")
-            {
-                _numSegmentsX = (int)Mathf.Floor((right - left) / _size.x);
-            }
-            else if (_properties["x_boundary"] == "outer")
-            {
-                _numSegmentsX = (int)Mathf.Ceil((right - left) / _size.x);
-            }
-            else if (_properties["x_boundary"] == "exact")
-            {
-                float floatNumSegments = (right - left) / _size.x;
-                if (Mathf.Abs(floatNumSegments - Mathf.RoundToInt(floatNumSegments)) > 1e-3)
-                {
-                    ModLog.Error($"Object {data.id} has boundary condition `exact` " +
-                    $"but boundaries given are not exact!\n" +
-                    $"Skipped registering object!");
-                    UnityEngine.Object.Destroy(obj);
-                    return;
-                }
-                _numSegmentsX = Mathf.RoundToInt(floatNumSegments);
-            }
-
-            if (_numSegmentsX <= 0)
-            {
-                ModLog.Error($"{data.id} top and bottom position " +
-                    $"specified is shorter than 1 segment!\n" +
-                    $"Skipped registering object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-
-            // create `GameObject`s of each segment
-            // and adjust each segment's position based on `x_adjust`
-            if (_properties["x_adjust"] == "right")
-            {
-                for (int i = 0; i < _numSegmentsX; i++)
-                {
-                    GameObject newObject = UnityEngine.Object.Instantiate(
-                        obj,
-                        UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
-                    newObject.transform.position = new Vector3(
-                        right - ((i + 0.5f) * _size.x),
-                        obj.transform.position.y,
-                        0f);
-                    newObject.name = $"{data.id}_Segment_{i}";
-                }
-            }
-            else if (_properties["x_adjust"] == "left")
-            {
-                for (int i = 0; i < _numSegmentsX; i++)
-                {
-                    GameObject newObject = UnityEngine.Object.Instantiate(
-                        obj,
-                        UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
-                    newObject.transform.position = new Vector3(
-                        left + ((i + 0.5f) * _size.x),
-                        obj.transform.position.y,
-                        0f);
-                    newObject.name = $"{data.id}_Segment_{i}";
-                }
-            }
-
-            UnityEngine.Object.Destroy(obj); // destroy the original object
+            ApplyFillObjectsOnAxis(obj, data, props, FillAxis.X);
         }
-        else if (_properties["x_boundary"] != "none" && _properties["y_boundary"] != "none")
+        else
         {
-            // x_boundary and y_boundary both specified,
-            // shouldn't be needing to fill a matrix of object (at least in near future)
-            // code WIP, now just throws an error
-
             ModLog.Error($"{data.id} x and y boundaries both specified, " +
                 $"this feature is currently unsupported, " +
                 $"skipped registering object!");
             UnityEngine.Object.Destroy(obj);
+        }
+    }
+
+    /// <summary>
+    /// Returns the GameObject to clone when filling. Override to clone a child instead.
+    /// </summary>
+    protected virtual GameObject GetSourceForFill(GameObject obj)
+    {
+        return obj;
+    }
+
+    /// <summary>
+    /// Called after all fill segments are created. 
+    /// Default destroys the original object.
+    /// Override to keep the original alive or add post-processing.
+    /// </summary>
+    protected virtual void OnAfterFill(GameObject obj, ObjectData data,
+        float from, float to, int numSegments, float segmentSize)
+    {
+        UnityEngine.Object.Destroy(obj);
+    }
+
+    private void ApplyFillObjectsOnAxis(GameObject obj, ObjectData data, FillableProperties props, FillAxis axis)
+    {
+        // extract axis-specific boundary values
+        float? fromRaw, toRaw;
+        FillableProperties.BoundaryType boundary;
+
+        if (axis == FillAxis.Y)
+        {
+            fromRaw = props.Bottom;
+            toRaw = props.Top;
+            boundary = props.YBoundary;
+        }
+        else
+        {
+            fromRaw = props.Left;
+            toRaw = props.Right;
+            boundary = props.XBoundary;
+        }
+
+        // validate boundary values
+        string dimLabel = axis == FillAxis.Y ? "top/bottom" : "left/right";
+        if (fromRaw == null)
+        {
+            ModLog.Error($"{data.id} {dimLabel} not specified!\n" +
+                $"Skipped registering object!");
+            UnityEngine.Object.Destroy(obj);
             return;
         }
+        if (toRaw == null)
+        {
+            ModLog.Error($"{data.id} {dimLabel} not specified!\n" +
+                $"Skipped registering object!");
+            UnityEngine.Object.Destroy(obj);
+            return;
+        }
+
+        float from = fromRaw.Value;
+        float to = toRaw.Value;
+        float segSize = axis == FillAxis.Y ? _size.y : _size.x;
+        float range = to - from;
+        bool isYAxis = axis == FillAxis.Y;
+
+        // calculate integer number of segments based on boundary rounding
+        int numSegments;
+        if (boundary == FillableProperties.BoundaryType.Inner)
+        {
+            numSegments = (int)Mathf.Floor(range / segSize);
+        }
+        else if (boundary == FillableProperties.BoundaryType.Outer)
+        {
+            numSegments = (int)Mathf.Ceil(range / segSize);
+        }
+        else if (boundary == FillableProperties.BoundaryType.Exact)
+        {
+            float floatNumSegments = range / segSize;
+            if (Mathf.Abs(floatNumSegments - Mathf.RoundToInt(floatNumSegments)) > 1e-3)
+            {
+                ModLog.Error($"{data.id} has boundary condition `exact` " +
+                $"but boundaries given are not exact!\n" +
+                $"Skipped registering object!");
+                UnityEngine.Object.Destroy(obj);
+                return;
+            }
+            numSegments = Mathf.RoundToInt(floatNumSegments);
+        }
+        else
+        {
+            ModLog.Error($"Invalid boundary type for {data.id}!\n" +
+                $"Skipped registering object!");
+            UnityEngine.Object.Destroy(obj);
+            return;
+        }
+
+        if (numSegments <= 0)
+        {
+            ModLog.Error($"{data.id} specified boundaries are shorter than 1 segment!\n" +
+                $"Skipped registering object!");
+            UnityEngine.Object.Destroy(obj);
+            return;
+        }
+
+        // create GameObjects for each segment
+        bool adjustFromBottomOrLeft = isYAxis
+            ? (props.YAdjust == FillableProperties.YAdjustDirection.Bottom)
+            : (props.XAdjust == FillableProperties.XAdjustDirection.Left);
+        GameObject source = GetSourceForFill(obj);
+        Vector3 basePos = obj.transform.position;
+
+        for (int i = 0; i < numSegments; i++)
+        {
+            GameObject newObject = UnityEngine.Object.Instantiate(
+                source,
+                UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
+
+            float segmentPos = adjustFromBottomOrLeft
+                ? from + ((i + 0.5f) * segSize)
+                : to - ((i + 0.5f) * segSize);
+
+            Vector3 newPos = basePos;
+            if (axis == FillAxis.Y)
+                newPos.y = segmentPos;
+            else
+                newPos.x = segmentPos;
+
+            newObject.transform.position = newPos;
+            newObject.name = $"{data.id}_Segment_{i}";
+        }
+
+        OnAfterFill(obj, data, from, to, numSegments, segSize);
     }
 }

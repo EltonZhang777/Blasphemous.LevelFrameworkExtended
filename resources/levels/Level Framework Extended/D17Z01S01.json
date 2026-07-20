@@ -1,0 +1,183 @@
+{
+    "additions": [
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_001",
+            "position": {
+                "x": -987.1,
+                "y": 23.5
+            },
+            "rotation": {
+                "z": 180
+            }
+            
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_001_copy_1",
+            "position": {
+                "x": -985.3,
+                "y": 23.5
+            },
+            "rotation": {
+                "z": 180
+            }
+            
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_001_copy_2",
+            "position": {
+                "x": -990.7,
+                "y": 23.5
+            },
+            "rotation": {
+                "z": 180
+            }
+            
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_001_copy_3",
+            "position": {
+                "x": -988.9,
+                "y": 23.5
+            },
+            "rotation": {
+                "z": 180
+            }
+            
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_002",
+            "position": {
+                "x": -986,
+                "y": 22.9
+            },
+            "rotation": {
+                "z": 90
+            }
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_002_copy",
+            "position": {
+                "x": -986,
+                "y": 21.1
+            },
+            "rotation": {
+                "z": 90
+            }
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_003",
+            "position": {
+                "x": -990,
+                "y": 22.9
+            },
+            "rotation": {
+                "z": -90
+            }
+        },
+        {
+            "type": "spikes-brotherhood",
+            "id": "spike_003_copy",
+            "position": {
+                "x": -990,
+                "y": 21.1
+            },
+            "rotation": {
+                "z": -90
+            }
+        },
+        {
+            "type": "platform-droppable-brotherhood",
+            "id": "platform_droppable_002",
+            "position": {
+                "x": -988,
+                "y": 42
+            },
+            "condition": "flag:FIRST_DEATH",
+            "properties": [
+                "object_method = fill",
+                "x_boundary = inner",
+                "x_adjust = left",
+                "y_boundary = none",
+                "left = -989",
+                "right = -977"
+            ]
+        },
+        {
+            "type": "platform-droppable-brotherhood",
+            "id": "platform_droppable_001",
+            "position": {
+                "x": -976,
+                "y": 42
+            },
+            "condition": "flag:FIRST_DEATH"
+        },
+        {
+            "type": "platform-droppable-brotherhood",
+            "id": "platform_droppable_003_test",
+            "position": {
+                "x": -993,
+                "y": 42
+            },
+            "properties": [
+                "object_method = fill",
+                "x_boundary = none",
+                "y_boundary = inner",
+                "y_adjust = top",
+                "top = 42",
+                "bottom = 26"
+            ]
+        },
+        {
+            "type": "ladder-brotherhood",
+            "id": "ladder_001",
+            "position": {
+                "x": -976,
+                "y": 29
+            },
+            "properties": [
+                "object_method = fill",
+                "y_boundary = inner",
+                "top = 42.3",
+                "bottom = 20",
+                "y_adjust = top"
+            ]
+        },
+        {
+            "type": "ladder-brotherhood",
+            "id": "ladder_002",
+            "position": {
+                "x": -973,
+                "y": 29
+            },
+            "properties": [
+                "object_method = fill",
+                "y_boundary = inner",
+                "top = 42.3",
+                "bottom = 30",
+                "y_adjust = top"
+            ]
+        },
+        {
+            "type": "ladder-brotherhood",
+            "id": "ladder_003",
+            "position": {
+                "x": -970,
+                "y": 29
+            },
+            "properties": [
+                "object_method = fill",
+                "y_boundary = inner",
+                "top = 42.3",
+                "bottom = 17",
+                "y_adjust = top"
+            ]
+        }
+    ]
+}

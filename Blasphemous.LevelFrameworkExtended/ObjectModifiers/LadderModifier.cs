@@ -1,7 +1,6 @@
-﻿using Blasphemous.Framework.Levels;
+using Blasphemous.Framework.Levels;
 using Blasphemous.Framework.Levels.Modifiers;
-using Blasphemous.ModdingAPI;
-using System.Collections.Generic;
+using Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
 using Tools.Level.Layout;
 using UnityEngine;
 
@@ -10,10 +9,9 @@ namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
 /// <summary>
 /// Modifier for ladders
 /// </summary>
-public class LadderModifier : ModifierWithProperties, IModifier
+public class LadderModifier : FillableObjectModifier, IModifier
 {
     private float _segmentLength;
-    private int _numSegments;
 
     /// <summary>
     /// Destroys original SpriteRender, 
@@ -22,150 +20,62 @@ public class LadderModifier : ModifierWithProperties, IModifier
     /// </summary>
     public void Apply(GameObject obj, ObjectData data)
     {
-
-        _validPropertyArguments = new()
-        {
-            { "object_method", x => new List<string> {"fill", "single"}.Contains(x) },
-            { "y_boundary", x => new List<string> {"inner", "outer", "exact"}.Contains(x) },
-            { "y_adjust", x => new List<string> {"top", "bottom"}.Contains(x) }
-        };
-        _defaultPropertyArguments = new()
-        {
-            { "y_boundary", "inner" },
-            { "y_adjust", "top" }
-        };
-
-        _properties = UnzipProperties(data.properties);
-        if (_properties == null)
-        {
-            ModLog.Error($"Invalid properties specifications for {data.id}, " +
-                $"skipped registering object!");
-            UnityEngine.Object.Destroy(obj);
-            return;
-        }
+        var props = LadderProperties.Parse(data.properties);
 
         obj.name = $"LadderTrigger_{data.id}";
         obj.layer = LayerMask.NameToLayer("Ladder");
 
-        switch (_properties["object_method"])
+        switch (props.Method)
         {
-            case "single":
+            case LadderProperties.ObjectMethod.Single:
                 ApplySingleObject(obj, data);
                 break;
-            case "fill":
-                ApplyFillObjects(obj, data);
+            case LadderProperties.ObjectMethod.Fill:
+                base.ApplyFillObjects(obj, data, ConvertToFillableProperties(props));
                 break;
         }
     }
 
-    private void ApplySingleObject(GameObject obj, ObjectData data)
+    /// <summary>
+    /// Adds a BoxCollider2D trigger for single-segment ladders
+    /// </summary>
+    protected override void ApplySingleObject(GameObject obj, ObjectData data)
     {
         BoxCollider2D collider = obj.AddComponent<BoxCollider2D>();
         collider.isTrigger = true;
-        collider.size = new Vector2(
-            0.5f,
-            _segmentLength);
+        collider.size = new Vector2(0.5f, _segmentLength);
     }
 
-    private void ApplyFillObjects(GameObject obj, ObjectData data)
+    /// <summary>
+    /// Clones the SpriteRenderer's GameObject instead of the root object
+    /// </summary>
+    protected override GameObject GetSourceForFill(GameObject obj)
     {
-        // parse the string of top and bottom to floats
-        if (!_properties.TryGetValue("top", out string top_string))
-        {
-            ModLog.Error($"Ladder {data.id} top position not specified!\n" +
-                $"Skipped registering ladder object!");
-            UnityEngine.Object.Destroy(obj);
-            return;
-        }
-        if (!_properties.TryGetValue("bottom", out string bottom_string))
-        {
-            ModLog.Error($"Ladder {data.id} bottom position not specified!\n" +
-                $"Skipped registering ladder object!");
-            UnityEngine.Object.Destroy(obj);
-            return;
-        }
-        float top = float.Parse(top_string);
-        float bottom = float.Parse(bottom_string);
-
-        // calculate the integer number of ladder segments based on tile length
-        // calculate number of segments based on `y_boundary`
-        if (_properties["y_boundary"] == "inner")
-        {
-            _numSegments = (int)Mathf.Floor((top - bottom) / _segmentLength);
-        }
-        else if (_properties["y_boundary"] == "outer")
-        {
-            _numSegments = (int)Mathf.Ceil((top - bottom) / _segmentLength);
-        }
-        else if (_properties["y_boundary"] == "exact")
-        {
-            float floatNumSegments = (top - bottom) / _segmentLength;
-            if (Mathf.Abs(floatNumSegments - Mathf.RoundToInt(floatNumSegments)) > 1e-3)
-            {
-                ModLog.Error($"Ladder {data.id} has boundary condition `exact` " +
-                $"but boundaries given are not exact!\n" +
-                $"Skipped registering ladder object!");
-                UnityEngine.Object.Destroy(obj);
-                return;
-            }
-            _numSegments = Mathf.RoundToInt(floatNumSegments);
-        }
-
-        if (_numSegments <= 0)
-        {
-            ModLog.Error($"Ladder {data.id} top and bottom position " +
-                $"specified is shorter than 1 segment!\n" +
-                $"Skipped registering ladder object!");
-            UnityEngine.Object.Destroy(obj);
-            return;
-        }
-
-        // create `GameObject`s of each segment
-        // and adjust each segment's position based on `y_adjust`
         SpriteRenderer sprite = obj.GetComponent<SpriteRenderer>();
-        if (_properties["y_adjust"] == "top")
-        {
-            for (int i = 0; i < _numSegments; i++)
-            {
-                GameObject newObject = UnityEngine.Object.Instantiate(
-                    sprite.gameObject,
-                    UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
-                newObject.transform.position = new Vector3(
-                    obj.transform.position.x,
-                    top - ((i + 0.5f) * _segmentLength),
-                    0f);
-                newObject.name = $"{data.id}_LadderSegment_{i}";
-                newObject.layer = LayerMask.NameToLayer("Default");
-            }
-        }
-        else if (_properties["y_adjust"] == "bottom")
-        {
-            for (int i = 0; i < _numSegments; i++)
-            {
-                GameObject newObject = UnityEngine.Object.Instantiate(
-                    sprite.gameObject,
-                    UnityEngine.Object.FindObjectOfType<LevelInitializer>().transform);
-                newObject.transform.position = new Vector3(
-                    obj.transform.position.x,
-                    bottom + ((i + 0.5f) * _segmentLength),
-                    0f);
-                newObject.name = $"{data.id}_LadderSegment_{i}";
-                newObject.layer = LayerMask.NameToLayer("Default");
-            }
-        }
+        return sprite != null ? sprite.gameObject : obj;
+    }
 
-        UnityEngine.Object.Destroy(sprite); // destroy the original sprite
+    /// <summary>
+    /// Destroys the original sprite and creates a single covering collider
+    /// </summary>
+    protected override void OnAfterFill(GameObject obj, ObjectData data,
+        float from, float to, int numSegments, float segmentSize)
+    {
+        // destroy the original sprite renderer
+        SpriteRenderer sprite = obj.GetComponent<SpriteRenderer>();
+        if (sprite != null)
+            UnityEngine.Object.Destroy(sprite);
 
-        // create one single collider for the ladder
+        // position the collider at the center of the entire ladder
         obj.transform.position = new Vector3(
             obj.transform.position.x,
-            (top + bottom) / 2,
+            (to + from) / 2,
             0f);
+
+        // create one single hitbox covering all segments
         BoxCollider2D collider = obj.AddComponent<BoxCollider2D>();
         collider.isTrigger = true;
-        collider.size = new Vector2(
-            0.5f,
-            _segmentLength * _numSegments);
+        collider.size = new Vector2(0.5f, segmentSize * numSegments);
     }
 
     /// <summary>
@@ -174,6 +84,29 @@ public class LadderModifier : ModifierWithProperties, IModifier
     public LadderModifier(float segmentLength)
     {
         _segmentLength = segmentLength;
+        _size = new Vector2(segmentLength, segmentLength);
+    }
+
+    private static FillableProperties ConvertToFillableProperties(LadderProperties ladder)
+    {
+        FillableProperties.BoundaryType fb;
+        switch (ladder.YBoundary)
+        {
+            case LadderProperties.BoundaryType.Inner: fb = FillableProperties.BoundaryType.Inner; break;
+            case LadderProperties.BoundaryType.Outer: fb = FillableProperties.BoundaryType.Outer; break;
+            case LadderProperties.BoundaryType.Exact: fb = FillableProperties.BoundaryType.Exact; break;
+            default: fb = FillableProperties.BoundaryType.Inner; break;
+        }
+
+        return new FillableProperties
+        {
+            Method = ladder.Method == LadderProperties.ObjectMethod.Single
+                ? FillableProperties.ObjectMethod.Single
+                : FillableProperties.ObjectMethod.Fill,
+            YBoundary = fb,
+            YAdjust = ladder.YAdjust,
+            Top = ladder.Top,
+            Bottom = ladder.Bottom,
+        };
     }
 }
-
