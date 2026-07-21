@@ -38,7 +38,7 @@ public class ColliderModifer : FillableObjectModifier, IModifier
     /// </summary>
     public void Apply(GameObject obj, ObjectData data)
     {
-        var props = FillableProperties.Parse(data.properties);
+        FillableProperties props = FillableProperties.Parse(data.properties);
 
         obj.name = $"{data.id}";
         obj.layer = LayerMask.NameToLayer(_layer);

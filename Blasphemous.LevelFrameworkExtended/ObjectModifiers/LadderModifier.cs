@@ -1,7 +1,6 @@
 using Blasphemous.Framework.Levels;
 using Blasphemous.Framework.Levels.Modifiers;
 using Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
-using Tools.Level.Layout;
 using UnityEngine;
 
 namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
@@ -20,7 +19,7 @@ public class LadderModifier : FillableObjectModifier, IModifier
     /// </summary>
     public void Apply(GameObject obj, ObjectData data)
     {
-        var props = LadderProperties.Parse(data.properties);
+        LadderProperties props = LadderProperties.Parse(data.properties);
 
         obj.name = $"LadderTrigger_{data.id}";
         obj.layer = LayerMask.NameToLayer("Ladder");

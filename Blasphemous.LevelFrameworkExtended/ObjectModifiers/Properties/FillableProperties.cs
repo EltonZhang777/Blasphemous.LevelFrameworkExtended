@@ -10,16 +10,44 @@ namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
 public class FillableProperties
 {
     /// <summary>Whether to place a single object or fill an area</summary>
-    public enum ObjectMethod { Single, Fill }
+    public enum ObjectMethod
+    {
+        /// <summary>Places a single object</summary>
+        Single,
+        /// <summary>Repeatedly places objects to fill an area</summary>
+        Fill
+    }
 
     /// <summary>How to resolve boundary rounding</summary>
-    public enum BoundaryType { None, Inner, Outer, Exact }
+    public enum BoundaryType
+    {
+        /// <summary>No boundary constraint</summary>
+        None,
+        /// <summary>Rounds boundary inward (floor)</summary>
+        Inner,
+        /// <summary>Rounds boundary outward (ceil)</summary>
+        Outer,
+        /// <summary>Boundary must match exactly</summary>
+        Exact
+    }
 
     /// <summary>Adjustment direction along X axis</summary>
-    public enum XAdjustDirection { Left, Right }
+    public enum XAdjustDirection
+    {
+        /// <summary>Adjusts from left</summary>
+        Left,
+        /// <summary>Adjusts from right</summary>
+        Right
+    }
 
     /// <summary>Adjustment direction along Y axis</summary>
-    public enum YAdjustDirection { Top, Bottom }
+    public enum YAdjustDirection
+    {
+        /// <summary>Adjusts from top</summary>
+        Top,
+        /// <summary>Adjusts from bottom</summary>
+        Bottom
+    }
 
     /// <summary>Single or fill placement</summary>
     [JsonProperty("object_method")]
@@ -67,7 +95,7 @@ public class FillableProperties
     /// </summary>
     public static FillableProperties Parse(string[] raw)
     {
-        var jObj = new JObject();
+        JObject jObj = [];
         foreach (string arg in raw)
         {
             int sep = arg.IndexOf('=');

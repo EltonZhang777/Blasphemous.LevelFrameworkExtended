@@ -10,10 +10,24 @@ namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
 public class LadderProperties
 {
     /// <summary>Whether to place a single ladder or fill an area</summary>
-    public enum ObjectMethod { Single, Fill }
+    public enum ObjectMethod
+    {
+        /// <summary>Places a single ladder</summary>
+        Single,
+        /// <summary>Repeatedly places ladders to fill an area</summary>
+        Fill
+    }
 
     /// <summary>How to resolve boundary rounding (no None — ladders always fill)</summary>
-    public enum BoundaryType { Inner, Outer, Exact }
+    public enum BoundaryType
+    {
+        /// <summary>Rounds boundary inward (floor)</summary>
+        Inner,
+        /// <summary>Rounds boundary outward (ceil)</summary>
+        Outer,
+        /// <summary>Boundary must match exactly</summary>
+        Exact
+    }
 
     /// <summary>Single or fill placement</summary>
     [JsonProperty("object_method")]
@@ -43,7 +57,7 @@ public class LadderProperties
     /// </summary>
     public static LadderProperties Parse(string[] raw)
     {
-        var jObj = new JObject();
+        JObject jObj = [];
         foreach (string arg in raw)
         {
             int sep = arg.IndexOf('=');

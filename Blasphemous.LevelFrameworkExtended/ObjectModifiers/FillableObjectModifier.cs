@@ -6,11 +6,16 @@ using UnityEngine;
 
 namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
 
+/// <summary>
+/// Base class for modifiers that place objects by filling an area along an axis
+/// </summary>
 public abstract class FillableObjectModifier
 {
     private enum FillAxis { X, Y }
 
+    /// <summary>Size of each segment</summary>
     protected Vector2 _size;
+    /// <summary>Offset applied to each segment</summary>
     protected Vector2 _offset;
 
     /// <summary>
@@ -20,6 +25,9 @@ public abstract class FillableObjectModifier
     {
     }
 
+    /// <summary>
+    /// Fills an area with repeated object segments based on boundary properties
+    /// </summary>
     protected void ApplyFillObjects(GameObject obj, ObjectData data, FillableProperties props)
     {
         if (props.XBoundary == FillableProperties.BoundaryType.None
