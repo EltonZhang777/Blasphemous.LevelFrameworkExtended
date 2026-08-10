@@ -17,13 +17,16 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetName).xml</DocumentationFile>
     <RepositoryUrl>https://github.com/EltonZhang777/Blasphemous.LevelFrameworkExtended</RepositoryUrl>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- Single source of truth for the prerequisite library version -->
+    <NewbieEltonLibsVersion>0.2.1</NewbieEltonLibsVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Blasphemous.Framework.Levels" Version="0.2.0" />
     <PackageReference Include="Blasphemous.GameLibs" Version="4.0.67" />
     <PackageReference Include="Blasphemous.ModdingAPI" Version="3.0.1" />
-    <PackageReference Include="Blasphemous.NewbieEltonLibs" Version="0.1.0" />
+    <PackageReference Include="Blasphemous.NewbieEltonLibs" Version="$(NewbieEltonLibsVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +39,7 @@
     <ItemGroup>
       <PluginDll Include="$(TargetPath)" />
       <Resources Include="$(SolutionDir)\resources\**\*.*" />
+      <DataDlls Include="$(NuGetPackageRoot)blasphemous.newbieeltonlibs\$(NewbieEltonLibsVersion)\lib\net35\Blasphemous.NewbieEltonLibs.dll" />
     </ItemGroup>
 
     <!-- Get export directories -->
@@ -47,11 +51,13 @@
     <!-- Export to dev folder -->
     <Copy SourceFiles="@(Resources)" DestinationFolder="$(DevFolder)\%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Copy SourceFiles="@(PluginDll)" DestinationFolder="$(DevFolder)\plugins" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(DataDlls)" DestinationFolder="$(DevFolder)\data" SkipUnchangedFiles="true" />
 
     <!-- Export to publish folder -->
     <RemoveDir Directories="$(PublishFolder)" />
     <Copy SourceFiles="@(Resources)" DestinationFolder="$(PublishFolder)\%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Copy SourceFiles="@(PluginDll)" DestinationFolder="$(PublishFolder)\plugins" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(DataDlls)" DestinationFolder="$(PublishFolder)\data" SkipUnchangedFiles="true" />
     <ZipDirectory SourceDirectory="$(PublishFolder)" DestinationFile="$(PublishFolder)\..\$(TargetName).zip" Overwrite="true" />
 
   </Target>
