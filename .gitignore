@@ -3,6 +3,7 @@
 .vscode/
 .reasonix/
 .references/
+tmp/
 AGENTS.local.md
 
 ## Ignore Visual Studio temporary files, build results, and
