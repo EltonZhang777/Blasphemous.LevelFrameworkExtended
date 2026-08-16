@@ -11,8 +11,11 @@ namespace Blasphemous.LevelFrameworkExtended;
 ///<inheritdoc/>
 public class LevelFrameworkExtended : BlasMod
 {
+
+#region LevelObject Creators
     private static readonly List<LevelObject> _creators =
     [
+        #region Spikes
         // spikes
         new LevelObject("spikes-jondo-tiny",
             new SceneLoader("D03Z02S02_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Spikes/inverted-bell-spritesheet_56"),
@@ -38,12 +41,16 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("spikes-miriam",
             new SceneLoader("D23Z01S05_DECO", "MIDDLEGROUND/AfterPlayer/Spikes/{0}"),
             new SpikeModifier()),
+        #endregion Spikes
 
+        # region Traps
         // other traps
         new LevelObject("bell-face",
             new SceneLoader("D03Z02S06_LOGIC", "TRAPS/TRAP_SHOCK_ENEMY"),
             new NoModifier("Face bell")),
+        #endregion Traps
 
+        #region Ladders
         // ladders
         new LevelObject("ladder-jondo",
             new SceneLoader("D03Z02S02_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/{0}"),
@@ -51,7 +58,9 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("ladder-brotherhood",
             new SceneLoader("D17Z01S04_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/brotherhood-spritesheet_43"),
             new LadderModifier(1.6f)),
+        #endregion Ladders
 
+        #region Droppable Platforms
         // droppable platforms
         new LevelObject("platform-droppable-library",
             new SceneLoader("D05Z01S01_DECO", "MIDDLEGROUND/AfterPlayer/Floor/library_spritesheet_34"),
@@ -59,12 +68,16 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-droppable-brotherhood",
             new SceneLoader("D17Z01S04_DECO", "MIDDLEGROUND/AfterPlayer/Floor/brotherhood-spritesheet_41"),
             new ColliderModifer("OneWayDown", new Vector2(2f, 1f), new Vector2(0f, -0.3f))),
+        #endregion Droppable Platforms
 
+        #region Solid Objects
         // solid objects
         new LevelObject("platform-solid-brotherhood",
             new SceneLoader("D17Z01S04_DECO", "MIDDLEGROUND/AfterPlayer/Floor/brotherhood-spritesheet_0"),
             new ColliderModifer("Floor", new Vector2(2f, 1f), new Vector2(0f, -0.3f))),
+        #endregion Solid Objects
     ];
+#endregion LevelObject Creators
 
     internal LevelFrameworkExtended() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
