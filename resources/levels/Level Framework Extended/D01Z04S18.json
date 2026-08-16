@@ -1,0 +1,20 @@
+{
+    "additions": [
+        {
+            "type": "platform-wood",
+            "id": "platform-wood_001",
+            "position": {
+                "x": -90,
+                "y": -90
+            }
+        },
+        {
+            "type": "platform-wood",
+            "id": "platform-wood_002",
+            "position": {
+                "x": -88,
+                "y": -95
+            }
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+name: Discord
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  discord:
+    if: ${{ !github.event.release.draft && !github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check Major Version
+      id: check
+      run: |
+        TAG="${{ github.event.release.tag_name }}"
+        MAJOR=$(printf '%s' "$TAG" | sed -nE 's/^[vV]?([0-9]+).*/\1/p')
+        if [ -z "$MAJOR" ]; then MAJOR=0; fi
+        echo "major=$MAJOR" >> "$GITHUB_OUTPUT"
+        echo "Parsed major version: $MAJOR (tag: $TAG)"
+
+    - name: Notify Discord
+      if: ${{ steps.check.outputs.major != '0' }}
+      uses: SethCohen/github-releases-to-discord@v1
+      with:
+        webhook_url: ${{ secrets.WEBHOOK_URL }}
+        footer_timestamp: true
