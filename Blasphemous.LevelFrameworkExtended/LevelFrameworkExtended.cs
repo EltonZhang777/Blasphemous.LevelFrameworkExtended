@@ -96,7 +96,11 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-ossuary",
             new SceneLoader("D01BZ06S01_DECO", "MIDDLEGROUND/{2}/{2}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+<<<<<<< Updated upstream
         new LevelObject("platform-solid-Santos(遇到吹喇叭哥的地方 不会形容)",
+=======
+        new LevelObject("platform-solid-Santos//遇到吹喇叭哥的地方 不会形容",
+>>>>>>> Stashed changes
             new SceneLoader("D01BZ07S01_DECO", "MIDDLEGROUND/{3}/{1}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
         new LevelObject("platform-solid-Boss Ossary//死歌",
