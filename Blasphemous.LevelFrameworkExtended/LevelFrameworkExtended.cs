@@ -96,9 +96,10 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-ossuary",
             new SceneLoader("D01BZ06S01_DECO", "MIDDLEGROUND/{2}/{2}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-        new LevelObject("platform-solid-Santos(遇到吹喇叭哥的地方 不会形容)",
+        new LevelObject("platform-solid-Santos",
             new SceneLoader("D01BZ07S01_DECO", "MIDDLEGROUND/{3}/{1}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+//上一条是喇叭哥的房间 不知道叫什么名字
         new LevelObject("platform-solid-Boss Ossary//死歌",
             new SceneLoader("D01BZ08S01_DECO", "MIDDLEGROUND/Frontwalls(1)/FLOOR_Dark"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
@@ -108,7 +109,7 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-TheHolyLand2",
             new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_2(3)"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-        new LevelObject("platform-solid-TheHolyLand3",
+        new LevelObject("platform-solid-TheHolyLand3", 
             new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_1"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
 
