@@ -96,11 +96,10 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-ossuary",
             new SceneLoader("D01BZ06S01_DECO", "MIDDLEGROUND/{2}/{2}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-        new LevelObject("platform-solid-Santos",
+        new LevelObject("platform-solid-Santos", //喇叭哥
             new SceneLoader("D01BZ07S01_DECO", "MIDDLEGROUND/{3}/{1}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-//喇叭哥
-        new LevelObject("platform-solid-Boss Ossary//死歌",
+        new LevelObject("platform-solid-Boss Ossary", //死歌
             new SceneLoader("D01BZ08S01_DECO", "MIDDLEGROUND/Frontwalls(1)/FLOOR_Dark"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
         new LevelObject("platform-solid-TheHolyLand",
