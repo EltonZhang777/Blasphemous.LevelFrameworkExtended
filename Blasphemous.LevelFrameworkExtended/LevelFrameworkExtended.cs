@@ -99,7 +99,7 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-Santos",
             new SceneLoader("D01BZ07S01_DECO", "MIDDLEGROUND/{3}/{1}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-//上一条是喇叭哥的房间 不知道叫什么名字
+//喇叭哥
         new LevelObject("platform-solid-Boss Ossary//死歌",
             new SceneLoader("D01BZ08S01_DECO", "MIDDLEGROUND/Frontwalls(1)/FLOOR_Dark"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
@@ -109,7 +109,7 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-TheHolyLand2",
             new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_2(3)"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-        new LevelObject("platform-solid-TheHolyLand3", 
+        new LevelObject("platform-solid-TheHolyLand3",
             new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_1"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
 
@@ -121,16 +121,16 @@ public class LevelFrameworkExtended : BlasMod
         #region Shelf
         new LevelObject("shelf01",
             new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf01"),
-            NoModifer("shelf01"),
+            new NoModifier("shelf01")),
         new LevelObject("shelf02",
             new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf02"),
-            NoModifer("shelf02"),
+            new NoModifier("shelf02")),
         new LevelObject("shelf03",
             new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf03"),
-            NoModifer("shelf03"),
+            new NoModifier("shelf03"))
         #endregion Shelf
 
-        )
+        
     ];
 #endregion LevelObject Creators
 
