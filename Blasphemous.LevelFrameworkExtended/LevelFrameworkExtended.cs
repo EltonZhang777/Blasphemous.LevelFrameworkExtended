@@ -41,6 +41,9 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("spikes-miriam",
             new SceneLoader("D23Z01S05_DECO", "MIDDLEGROUND/AfterPlayer/Spikes/{0}"),
             new SpikeModifier()),
+        new LevelObject("spikes-wasteland",
+            new SceneLoader("D01Z03S01_DECO", "MIDDLEGUROUND/AfterPlayer/Spikes/{0}"),
+            new SpikeModifier()),
         #endregion Spikes
 
         # region Traps
@@ -75,7 +78,58 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-brotherhood",
             new SceneLoader("D17Z01S04_DECO", "MIDDLEGROUND/AfterPlayer/Floor/brotherhood-spritesheet_0"),
             new ColliderModifer("Floor", new Vector2(2f, 1f), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Church1",
+            new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/AfterPlayer/Floor/chaple-spritesheet_13"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Church2",
+            new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/AfterPlayer/Floor/chaple-spritesheet_9"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Church3",
+            new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/AfterPlayer/Floor/chaple-spritesheet_12"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-SewerpuzzleReward",
+            new SceneLoader("D01BZ05S01_DECO", "MIDDLEGROUND/AfterPlayer/Floor/{2}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Church3-withcarpet",
+            new SceneLoader("D01BZ05S01_LOGIC", "Interactables/{2}/chaple-spritesheet_61(1)"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-ossuary",
+            new SceneLoader("D01BZ06S01_DECO", "MIDDLEGROUND/{2}/{2}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Santos(遇到吹喇叭哥的地方 不会形容)",
+            new SceneLoader("D01BZ07S01_DECO", "MIDDLEGROUND/{3}/{1}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Boss Ossary//死歌",
+            new SceneLoader("D01BZ08S01_DECO", "MIDDLEGROUND/Frontwalls(1)/FLOOR_Dark"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-TheHolyLand",
+            new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_0(4)"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-TheHolyLand2",
+            new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_2(3)"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-TheHolyLand3",
+            new SceneLoader("D01Z01S01_DECO", "Afteplayer/Floor/forest-spritesheet_1"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+
+
+
         #endregion Solid Objects
+        //Dalin's work
+        //Wip:ShelfModifer
+        #region Shelf
+        new LevelObject("shelf01",
+            new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf01"),
+            NoModifer("shelf01"),
+        new LevelObject("shelf02",
+            new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf02"),
+            NoModifer("shelf02"),
+        new LevelObject("shelf03",
+            new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf03"),
+            NoModifer("shelf03"),
+        #endregion Shelf
+
+        )
     ];
 #endregion LevelObject Creators
 
