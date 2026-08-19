@@ -44,6 +44,9 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("spikes-wasteland",
             new SceneLoader("D01Z03S01_DECO", "MIDDLEGUROUND/AfterPlayer/Spikes/{0}"),
             new SpikeModifier()),
+        new LevelObject("spikes-wasteland-inside-house",
+            new SceneLoader("D01Z03S02_DECO", "MIDDLEGUROUND/AfterPlayer/Spikes/{0}"),
+            new SpikeModifier()),
         #endregion Spikes
 
         # region Traps
@@ -51,6 +54,18 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("bell-face",
             new SceneLoader("D03Z02S06_LOGIC", "TRAPS/TRAP_SHOCK_ENEMY"),
             new NoModifier("Face bell")),
+        new LevelObject("Trunk in the Wasteland",
+            new SceneLoader("D01Z03S01_LOGIC", "LOGIC/{0}/{0}/{0}"),
+            new NoModifier("Trunk")),
+        new LevelObject("Bell That can be broken and open some other doors or traps",
+            new SceneLoader("D01Z04S01_LOGIC", "LOGIC/{0}/{2}/{0}"),
+            new NoModifier("Shock Receiver")),
+        new LevelObject("Traps Spike",
+            new SceneLoader("D01Z04S05_LOGIC", "LOGIC/Traps/Trap_Spikes/{0}"),
+            new NoModifier("Trap Spike")),//If you wanna blood spritesheet,in:D01Z04S05_DECO,Middleground/AfterPlayer/Props/Blood/cathedral-sprite-sheet_173
+        new LevelObject("Turret",
+            new SceneLoader("D01Z04S06_LOGIC", "LOGIC/Traps/{0}/{0}"),
+            new NoModifier("Trap Spike")),
         #endregion Traps
 
         #region Ladders
@@ -70,6 +85,16 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("ladder-Aerbeiluos3",
             new SceneLoader("D01Z02S02_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/village-inside-house-spritesheet_21(1)"),
             new LadderModifier(1.6f)),
+        new LevelObject("ladder-WasteLand-inside-house",
+            new SceneLoader("D01Z03S02_DECO", "MIDDLEGROUND/AfterPlayer/Ladders/tower-spritesheet_23(2)"),
+            new LadderModifier(1.6f)),
+        new LevelObject("ladder-MercyDreams1",
+            new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/{0}"),
+            new LadderModifier(1.6f)),
+        new LevelObject("ladder-MercyDreams2",
+            new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/{1}"),
+            new LadderModifier(1.6f)),
+
         
         #endregion Ladders
 
@@ -145,6 +170,54 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-floor-in-teleport",
             new SceneLoader("D01Z02S06_DECO", "MIDDLEGROUND/{0}/Floor/teleport-spritesheet_0"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor",
+            new SceneLoader("D01Z03S01_DECO", "MIDDLEGROUND/{0}/Floor/churches-field-spritesheet_0"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor",
+            new SceneLoader("D01Z03S01_DECO", "MIDDLEGROUND/{0}/Floor/churches-field-spritesheet-improved_1"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor2",
+            new SceneLoader("D01Z03S01_DECO", "MIDDLEGROUND/{0}/Floor/churches-field-spritesheet-improved_0(5)"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-trunkfloor",
+            new SceneLoader("D01Z03S01_LOGIC", "Logic/{0}/Geo_Block_Actuable_Bridge(128x32)/{1}/{0}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor-inside-house",
+            new SceneLoader("D01Z03S02_DECO", "MIDDLEGROUND/{1}/Floor/{32}"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor-inside-house",
+            new SceneLoader("D01Z03S02_DECO", "MIDDLEGROUND/{1}/Floor/{0}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor3",
+            new SceneLoader("D01Z03S05_DECO", "MIDDLEGROUND/{1}/Floor/churches-field-spritesheet_improved_21(8)"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-wasteLand-floor4",
+            new SceneLoader("D01Z03S05_DECO", "MIDDLEGROUND/{1}/Floor/churches-field-spritesheet_improved_32(6)"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-Blood",
+            new SceneLoader("D01Z03S05_LOGIC", "LOGIC_{1}/{1}/{0}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-MercyDreams-Stairs",
+            new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/{1}/Floor/{1}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-MercyDreams-Stairs",
+            new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/{1}/Floor/mercy-dreams-spritesheet_0(1)"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-MercyDreams-Stairs",
+            new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/{1}/WoodenPlatforms/{0}"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-MercyDreams-Boss",
+            new SceneLoader("D01Z04S18_DECO", "Afterplayer/Floor/{0}"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Sheng-Rong",
+            new SceneLoader("D01Z04S19_DECO", "MIDDLEGROUND/{1}/{0}"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+
+
+        
+
+
+
 
 
 
@@ -174,6 +247,7 @@ public class LevelFrameworkExtended : BlasMod
         
     ];
 #endregion LevelObject Creators
+
 
     internal LevelFrameworkExtended() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
