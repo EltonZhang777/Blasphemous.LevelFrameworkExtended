@@ -3,6 +3,7 @@ using Blasphemous.Framework.Levels.Modifiers;
 using Blasphemous.LevelFrameworkExtended.Components;
 using Blasphemous.LevelFrameworkExtended.ObjectModifiers;
 using Blasphemous.ModdingAPI;
+using Gameplay.GameControllers.Environment.AreaEffects;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -65,7 +66,13 @@ public class LevelFrameworkExtended : BlasMod
             new NoModifier("Trap Spike")),//If you wanna blood spritesheet,in:D01Z04S05_DECO,Middleground/AfterPlayer/Props/Blood/cathedral-sprite-sheet_173
         new LevelObject("Turret",
             new SceneLoader("D01Z04S06_LOGIC", "LOGIC/Traps/{0}/{0}"),
-            new NoModifier("Trap Spike")),
+            new NoModifier("Trap Turret")),
+        new LevelObject("Trap Sewage",
+            new SceneLoader("D01Z05S01_LOGIC", "Traps/Trap_Sewage/{0}"),//如果你需要其他的管道 它们在：D01Z05S01_DECO/Middleground/AfterPlayer/Props/Sewage_63和_64和_64(1)
+            new NoModifier("Trap Sewage")),//另外：地上的毒液（提示上面有该陷阱用）：D01Z05S01_DECO/{0}/{0}
+        new LevelObject("Traps Poison Mist",
+            new SceneLoader("D01Z05S08_LOGIC", "TRAPS/PoisonAreaEffect/{0}"),
+            new NoModifier("Poison Mist")),
         #endregion Traps
 
         #region Ladders
@@ -94,6 +101,10 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("ladder-MercyDreams2",
             new SceneLoader("D01Z04S01_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/{1}"),
             new LadderModifier(1.6f)),
+        new LevelObject("ladderCistern",
+            new SceneLoader("D01Z05S01_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/{2}"),
+            new LadderModifier(1.6f)),
+
 
         
         #endregion Ladders
@@ -152,9 +163,6 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-TheHolyLand4",
             new SceneLoader("D01Z01S02_DECO", "MIDDLEGROUND/{0}/Ruins/forest-spritsheet_51(1)"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-        new LevelObject("platform-solid-Mud of TheHolyLand",
-            new SceneLoader("D01Z01S02_DECO", "MIDDLEGROUND/{0}/Mud/forest-spritsheet_34(8)"),
-            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
         new LevelObject("platform-solid-Village",
             new SceneLoader("D01Z02S01_DECO", "MIDDLEGROUND/{0}/Floor/village-spritsheet_31"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
@@ -212,6 +220,31 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-Sheng-Rong",
             new SceneLoader("D01Z04S19_DECO", "MIDDLEGROUND/{1}/{0}"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Sheng-Rong",
+            new SceneLoader("D01Z04S19_DECO", "MIDDLEGROUND/{1}/{0}"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Cristern1",
+            new SceneLoader("D01Z05S01_DECO", "MIDDLEGROUND/{0}/{1}/{0}"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),//如果需要合并注册，请和下一条合并
+        new LevelObject("platform-solid-Cristern1(附件)",
+            new SceneLoader("D01Z05S01_DECO", "MIDDLEGROUND/{0}/{1}/sewers-spritesheet_3(1)"),
+            new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Cristern2",
+            new SceneLoader("D01Z05S01_DECO", "MIDDLEGROUND/{0}/{1}/sewers-spritesheet_0(1)"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-电梯井",
+            new SceneLoader("D01Z05S25_DECO", "MIDDLEGROUND/{0}/{1}/tree-metal-tower-spritesheet_0(1)"),//电梯的文件非常复杂，因此我只给出路径。要注册的元素很多：D1Z05S25_LOGIC/Interactables/Act_Elevator/其中的所有文件均有关
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-水银提交处",
+            new SceneLoader("D01Z05S27_DECO", "MIDDLEGROUND/{0}/{1}/{1}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-solid-Jibrael's-Cave",
+            new SceneLoader("D01Z06S01_DECO", "MIDDLEGROUND/{0}/{1}/{0}"),
+            new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
+
+
+
+
 
 
         
@@ -241,8 +274,36 @@ public class LevelFrameworkExtended : BlasMod
             new NoModifier("shelf02")),
         new LevelObject("shelf03",
             new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelf03"),
-            new NoModifier("shelf03"))
+            new NoModifier("shelf03")),
         #endregion Shelf
+        
+
+        #region Liquid
+        new LevelObject("Liquid-Mud of TheHolyLand",
+            new SceneLoader("D01Z01S02_DECO", "MIDDLEGROUND/{0}/Mud/forest-spritsheet_34(8)"),
+            new NoModifier("Liquid-Mud of TheHolyLand")),
+        new LevelObject("Liquid-Water of Cistern",
+            new SceneLoader("D01Z05S03_DECO", "MIDDLEGROUND/{1}/Poolpiece/{1}"),
+            new NoModifier("Liquid-Water of Cistern")),
+        #endregion Liquid
+        
+
+
+
+
+
+
+        #region Chest And Collectible
+        new LevelObject("Golden-Chest",
+            new SceneLoader("D01Z05S06_DECO", "LOGIC/Interactable/Act_WoodenChest/{1}"),//可能会用到{0}、{2}，下同
+            new NoModifier("Golden-Chest")), 
+        new LevelObject("Iron-Chest",
+            new SceneLoader("D01Z05S11_DECO", "LOGIC/Interactable/Act_IronChest/{1}"),
+            new NoModifier("Iron-Chest")),
+        new LevelObject("Collectible",
+            new SceneLoader("D01Z04S11_LOGIC", "LOGIC/{0}/{0}/{2}"),
+            new NoModifier("Collectible")), 
+        #endregion Chest And Collectible
 
         
     ];
