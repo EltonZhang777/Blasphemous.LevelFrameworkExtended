@@ -791,7 +791,7 @@ public class LevelFrameworkExtended : BlasMod
             new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/{0}/Walls/{2}"),
             new NoModifier("Wall-Church3")),
 
-        #endregion Wall
+        #endregion Wall//先不写
         #region Props
         new LevelObject("Props-Church1",
             new SceneLoader("D01BZ04S01_DECO", "Foreground/{0}/{0}"),
@@ -807,7 +807,29 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("Door-Church",
             new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/{0}/Arcs/{1}"),//和{2}合并注册
             new NoModifier("Door-Church")),
-        #endregion Door
+        new LevelObject("Door-stone",
+            new SceneLoader("D01BZ09S01_DECO", "MIDDLEGROUND/{0}/Gameplay/{1}"),
+            new NoModifier("Door-stone")),
+        new LevelObject("Door-brotherhood",
+            new SceneLoader("D01Z01S07_DECO", "MIDDLEGROUND/{0}/Gameplay/{1}"),
+            new NoModifier("Door-brotherhood")),
+        new LevelObject("Door-aerbeiluo",
+            new SceneLoader("D01Z02S01_DECO", "MIDDLEGROUND/{0}/Gameplay/{1}"),
+            new NoModifier("Door-aerbeiluo")),
+        new LevelObject("Door-inner-aerbeiluo",
+            new SceneLoader("D01Z02S02_DECO", "MIDDLEGROUND/{0}/Gameplay/Doors"),
+            new NoModifier("Door-inner-aerbeiluo")),
+        new LevelObject("Door-wallhole",
+            new SceneLoader("D01Z02S02_DECO", "MIDDLEGROUND/{0}/WallHole"),
+            new NoModifier("Door-wallhole")),
+        new LevelObject("Door-aerbeiluo2",
+            new SceneLoader("D01Z02S03_DECO", "MIDDLEGROUND/{0}/Gameplay/Doors"),
+            new NoModifier("Door-aerbeiluo2")),
+        new LevelObject("Door-地下",
+            new SceneLoader("D01Z02S03_DECO", "MIDDLEGROUND/{0}/Gameplay/Doors"),
+            new NoModifier("Door-地下")),
+
+        #endregion Door//先不写
         
 
 
@@ -819,7 +841,7 @@ public class LevelFrameworkExtended : BlasMod
             new SceneLoader("D01BZ02S01_DECO", "MIDDLEGROUND/{0}/{0}/{1}"),//和{2}合并注册
             new NoModifier("Background-Store")),
 
-        #endregion ArtResource
+        #endregion ArtResource//先不写
 
 
 
@@ -829,7 +851,38 @@ public class LevelFrameworkExtended : BlasMod
             new NoModifier("Shopkeeper")),
         new LevelObject("捐钱处",
             new SceneLoader("D01BZ02S01_DECO", "Logic/INTERACTABLES/{0}"),//这里的元素过于复杂，不能有效的注册，请你来注册
-            new NoModifier("Shopkeeper")),
+            new NoModifier("捐钱处")),
+        new LevelObject("祭坛",
+            new SceneLoader("D01Z02S06_DECO", "MIDDLEGROUND/{0}/Gameplay/alter"),
+            new NoModifier("祭坛")),
+        new LevelObject("teleport",
+            new SceneLoader("D01Z02S07_DECO", "MIDDLEGROUND/{0}/Gameplay/{0}，{2}"),
+            new NoModifier("teleport")),
+        new LevelObject("teleport",
+            new SceneLoader("D01Z03S07_LOGIC", "LOGIC/{0}/{0}"),
+            new NoModifier("teleport")),
+        new LevelObject("predieu",
+            new SceneLoader("D01Z04S03_LOGIC", "LOGIC/{0}/{0}/{1}"),
+            new NoModifier("predieu")),
+        new LevelObject("蜡烛后面的石像",
+            new SceneLoader("D01Z04S08_DECO", "Middleground/{0}/props/candle-virgin"),
+            new NoModifier("蜡烛后面的石像")),
+        new LevelObject("boss战帮手",
+            new SceneLoader("D01Z04S12_LOGIC", "Characters/NPCs/{0}"),
+            new NoModifier("boss战帮手")),
+        new LevelObject("赎罪雕像",
+            new SceneLoader("D01Z04S17_LOGIC", "LOGIC/{0}/{0}"),
+            new NoModifier("赎罪雕像")),
+        new LevelObject("水银哥",
+            new SceneLoader("D01Z05S27_LOGIC", "CHARACTERS/NPCs/{0}"),
+            new NoModifier("水银哥")),
+        new LevelObject("加血",
+            new SceneLoader("D01Z05S21_LOGIC", "CHARACTERS/NPCs/{0}"),
+            new NoModifier("加血")),//这个npc的模型找不到
+        new LevelObject("加蓝",
+            new SceneLoader("D02Z02S10_LOGIC", "LOGIC/Interactables/{0}"),
+            new NoModifier("加蓝")),
+
         #endregion NPCs and builds
 
         
