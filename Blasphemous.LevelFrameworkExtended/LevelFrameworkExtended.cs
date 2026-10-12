@@ -13,7 +13,7 @@ namespace Blasphemous.LevelFrameworkExtended;
 public class LevelFrameworkExtended : BlasMod
 {
 
-#region LevelObject Creators
+    #region LevelObject Creators
     private static readonly List<LevelObject> _creators =
     [
         #region Spikes
@@ -733,7 +733,7 @@ public class LevelFrameworkExtended : BlasMod
         #region Chest And Collectible
         new LevelObject("Golden-Chest",
             new SceneLoader("D01Z05S06_DECO", "LOGIC/Interactable/Act_WoodenChest/{1}"),//可能会用到{0}、{2}，下同
-            new NoModifier("Golden-Chest")), 
+            new NoModifier("Golden-Chest")),
         new LevelObject("Iron-Chest",
             new SceneLoader("D01Z05S11_DECO", "LOGIC/Interactable/Act_IronChest/{1}"),
             new NoModifier("Iron-Chest")),
@@ -889,7 +889,7 @@ public class LevelFrameworkExtended : BlasMod
 
         
     ];
-#endregion LevelObject Creators
+    #endregion LevelObject Creators
 
 
 

@@ -10,7 +10,7 @@ namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
 /// </summary>
 public class LadderModifier : FillableObjectModifier, IModifier
 {
-    private float _segmentLength;
+    private readonly float _segmentLength;
 
     /// <summary>
     /// Destroys original SpriteRender, 
@@ -88,15 +88,13 @@ public class LadderModifier : FillableObjectModifier, IModifier
 
     private static FillableProperties ConvertToFillableProperties(LadderProperties ladder)
     {
-        FillableProperties.BoundaryType fb;
-        switch (ladder.YBoundary)
+        var fb = ladder.YBoundary switch
         {
-            case LadderProperties.BoundaryType.Inner: fb = FillableProperties.BoundaryType.Inner; break;
-            case LadderProperties.BoundaryType.Outer: fb = FillableProperties.BoundaryType.Outer; break;
-            case LadderProperties.BoundaryType.Exact: fb = FillableProperties.BoundaryType.Exact; break;
-            default: fb = FillableProperties.BoundaryType.Inner; break;
-        }
-
+            LadderProperties.BoundaryType.Inner => FillableProperties.BoundaryType.Inner,
+            LadderProperties.BoundaryType.Outer => FillableProperties.BoundaryType.Outer,
+            LadderProperties.BoundaryType.Exact => FillableProperties.BoundaryType.Exact,
+            _ => FillableProperties.BoundaryType.Inner,
+        };
         return new FillableProperties
         {
             Method = ladder.Method == LadderProperties.ObjectMethod.Single

@@ -5,18 +5,11 @@ using Blasphemous.ModdingAPI;
 
 namespace Blasphemous.LevelFrameworkExtended.Components;
 
-internal class LevelObject
+internal class LevelObject(string id, ILoader loader, IModifier modifier)
 {
-    public string id;
-    public ILoader loader;
-    public IModifier modifier;
-
-    public LevelObject(string id, ILoader loader, IModifier modifier)
-    {
-        this.id = id;
-        this.loader = loader;
-        this.modifier = modifier;
-    }
+    public string id = id;
+    public ILoader loader = loader;
+    public IModifier modifier = modifier;
 
     public void Register(ModServiceProvider provider)
     {

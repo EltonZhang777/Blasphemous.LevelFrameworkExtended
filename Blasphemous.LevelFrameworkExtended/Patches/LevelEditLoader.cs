@@ -149,11 +149,11 @@ public static class LevelEditLoader
     /// <param name="sourceFileName">Name of the source file, used in error messages.</param>
     /// <returns>This method does not return a value.</returns>
     private static void ExpandArray(
-        JObject result, 
-        LevelEditType levelEditType, 
-        HashSet<string> occupancy, 
-        bool renameIds, 
-        Action<string> logError, 
+        JObject result,
+        LevelEditType levelEditType,
+        HashSet<string> occupancy,
+        bool renameIds,
+        Action<string> logError,
         string sourceFileName)
     {
         string levelEditName = LevelEditTypeToString(levelEditType);
@@ -247,8 +247,8 @@ public static class LevelEditLoader
     /// <returns>A new vector object with overrides applied.</returns>
     private static JObject MergeVector(JObject target, JObject overrides)
     {
-        JObject result = target == null 
-            ? [] 
+        JObject result = target == null
+            ? []
             : (JObject)target.DeepClone();
         foreach (var axis in overrides)
             result[axis.Key] = axis.Value.DeepClone();

@@ -15,7 +15,7 @@ public class ColliderModifer : FillableObjectModifier, IModifier
     /// For solid collider, choose layer "Floor". 
     /// For droppable platforms, choose layer "OneWayDown"
     /// </summary>
-    private string _layer;
+    private readonly string _layer;
 
     /// <summary>
     /// Specify the size of the collider (offset set to zero)
