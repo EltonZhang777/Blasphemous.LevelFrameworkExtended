@@ -36,5 +36,18 @@
 ## Conventions
 
 - Follow ModdingAPI conventions: mod class extends `BlasMod`, services registered in `OnRegisterServices`.
-- Issues are tracked in GitHub Issues — see `.docs/agents/issue-tracker.md`; domain docs via `.docs/agents/domain.md`.
 - Git: commit messages must be in English; get user approval before any commit / PR.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the default five canonical triage labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout with root `GLOSSARY.md` and `docs/adr/`. See `docs/agents/domain.md`.
