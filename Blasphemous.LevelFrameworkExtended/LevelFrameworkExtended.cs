@@ -15,6 +15,7 @@ public class LevelFrameworkExtended : BlasMod
 #region LevelObject Creators
     private static readonly List<LevelObject> _creators =
     [
+        .. EnemySpawnObjects.CreateAll(),
         #region Spikes
         // spikes
         new LevelObject("spikes-jondo-tiny",
@@ -141,4 +142,11 @@ public class LevelFrameworkExtended : BlasMod
         foreach (LevelObject entry in _creators)
             entry.Register(provider);
     }
+
+    ///<inheritdoc/>
+    protected override void OnLevelLoaded(string oldLevel, string newLevel)
+    {
+        EnemySpawnActivator.Ensure();
+    }
 }
+
