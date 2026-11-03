@@ -142,12 +142,6 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("Traps-翻转王座",
             new SceneLoader("D24Z01S01_LOGIC", "LOGIC/INTERACTABLES/{0}/Act_Platform/Body"),
             new NoModifier("fzwz")),
-
-
-
-
-        
-        
         #endregion Traps
 
         #region Ladders
@@ -215,12 +209,6 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("ladder-sea-cave",
             new SceneLoader("D20Z02S03_DECO", "MIDDLEGROUND/AfterPlayer/Gameplay/Ladders/naval-cave-spritesheet_52"),//5150
             new LadderModifier(1.6f)),
-
-
-
-
-
-        
         #endregion Ladders
 
         #region Droppable Platforms
@@ -249,11 +237,6 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-droppable-Garden",
             new SceneLoader("D03Z03S05_LOGIC", "LOGIC/{0}/{0}"),
             new ColliderModifer("OneWayDown", new Vector2(2f, 1f), new Vector2(0f, -0.3f))),
-
-
-
-
-        
         #endregion Droppable Platforms
 
         #region Solid Objects
@@ -648,58 +631,8 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-圣三一",
             new SceneLoader("D21Z01S01_LOGIC", "LOGIC/{0}/{0}/Body/{0}"),
             new ColliderModifer("Floor", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         #endregion Solid Objects
+
         //Dalin's work
         //Wip:ShelfModifer
         #region Shelf
@@ -713,7 +646,6 @@ public class LevelFrameworkExtended : BlasMod
             new SceneLoader("D01BZ02S01_DECO","MIDDLEGROUND/AfterPlayer/Props/Shelfs/Shelf03"),
             new NoModifier("shelf03")),
         #endregion Shelf
-        
 
         #region Liquid
         new LevelObject("Liquid-Mud of TheHolyLand",
@@ -724,12 +656,6 @@ public class LevelFrameworkExtended : BlasMod
             new NoModifier("Liquid-Water of Cistern")),
         #endregion Liquid
         
-
-
-
-
-
-
         #region Chest And Collectible
         new LevelObject("Golden-Chest",
             new SceneLoader("D01Z05S06_DECO", "LOGIC/Interactable/Act_WoodenChest/{1}"),//可能会用到{0}、{2}，下同
@@ -741,8 +667,6 @@ public class LevelFrameworkExtended : BlasMod
             new SceneLoader("D01Z04S11_LOGIC", "LOGIC/{0}/{0}/{2}"),
             new NoModifier("Collectible")), 
         #endregion Chest And Collectible
-
-
 
         #region WallClimber
         new LevelObject("WallClimber-Mountain1",
@@ -775,9 +699,6 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("WallClimber-竞技场",
             new SceneLoader("D19Z01S05_DECO", "Middleground/Cell23/AfterPlayer/Wallclimb/{0}"),
             new NoModifier("WallClimber-竞技场")),
-    
-        
-
         #endregion WallClimber
 
         #region Wall
@@ -790,8 +711,8 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("Wall-Church3",
             new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/{0}/Walls/{2}"),
             new NoModifier("Wall-Church3")),
-
         #endregion Wall//先不写
+
         #region Props
         new LevelObject("Props-Church1",
             new SceneLoader("D01BZ04S01_DECO", "Foreground/{0}/{0}"),
@@ -803,6 +724,7 @@ public class LevelFrameworkExtended : BlasMod
             new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/{0}/Arcs/chapel-spritesheet_25 (1)"),
             new NoModifier("Props-Church3")),
         #endregion Props
+
         #region Door
         new LevelObject("Door-Church",
             new SceneLoader("D01BZ04S01_DECO", "MIDDLEGROUND/{0}/Arcs/{1}"),//和{2}合并注册
@@ -828,10 +750,7 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("Door-地下",
             new SceneLoader("D01Z02S03_DECO", "MIDDLEGROUND/{0}/Gameplay/Doors"),
             new NoModifier("Door-地下")),
-
         #endregion Door//先不写
-        
-
 
         #region ArtResource
         new LevelObject("Background-Store",
@@ -842,8 +761,6 @@ public class LevelFrameworkExtended : BlasMod
             new NoModifier("Background-Store")),
 
         #endregion ArtResource//先不写
-
-
 
         #region NPCs and builds
         new LevelObject("Shopkeeper",
@@ -882,17 +799,9 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("加蓝",
             new SceneLoader("D02Z02S10_LOGIC", "LOGIC/Interactables/{0}"),
             new NoModifier("加蓝")),
-
         #endregion NPCs and builds
-
-        
-
-        
     ];
     #endregion LevelObject Creators
-
-
-
 
     internal LevelFrameworkExtended() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
