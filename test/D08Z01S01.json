@@ -1,0 +1,282 @@
+{
+  "additions": [
+    {
+      "type": "spikes-jondo-tiny",
+      "id": "spikes-jondo-tiny",
+      "position": {
+        "x": -102,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-jondo",
+      "id": "spikes-jondo",
+      "position": {
+        "x": -91,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-jondo-long",
+      "id": "spikes-jondo-long",
+      "position": {
+        "x": -80,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-patio",
+      "id": "spikes-patio",
+      "position": {
+        "x": -69,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-canvases",
+      "id": "spikes-canvases",
+      "position": {
+        "x": -58,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-rooftops",
+      "id": "spikes-rooftops",
+      "position": {
+        "x": -47,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-brotherhood",
+      "id": "spikes-brotherhood",
+      "position": {
+        "x": -36,
+        "y": 10.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-miriam",
+      "id": "spikes-miriam",
+      "position": {
+        "x": -102,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-wasteland",
+      "id": "spikes-wasteland",
+      "position": {
+        "x": -91,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "bell-face",
+      "id": "bell-face",
+      "position": {
+        "x": -80,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "ladder-jondo",
+      "id": "ladder-jondo",
+      "position": {
+        "x": -30,
+        "y": 14,
+        "z": 0
+      },
+      "properties": [
+        "object_method = fill",
+        "y_boundary = inner",
+        "y_adjust = top",
+        "top = 18",
+        "bottom = 10"
+      ]
+    },
+    {
+      "type": "ladder-brotherhood",
+      "id": "ladder-brotherhood",
+      "position": {
+        "x": -69,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-library",
+      "id": "platform-droppable-library",
+      "position": {
+        "x": -58,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-brotherhood",
+      "id": "platform-droppable-brotherhood",
+      "position": {
+        "x": -47,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood",
+      "id": "platform-solid-brotherhood",
+      "position": {
+        "x": -24,
+        "y": 19.5,
+        "z": 0
+      },
+      "properties": [
+        "object_method = fill",
+        "x_boundary = inner",
+        "x_adjust = left",
+        "y_boundary = none",
+        "left = -24",
+        "right = -16"
+      ]
+    },
+    {
+      "type": "platform-solid-Church1",
+      "id": "platform-solid-Church1",
+      "position": {
+        "x": -36,
+        "y": 13.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church2",
+      "id": "platform-solid-Church2",
+      "position": {
+        "x": -102,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church3",
+      "id": "platform-solid-Church3",
+      "position": {
+        "x": -91,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-SewerpuzzleReward",
+      "id": "platform-solid-SewerpuzzleReward",
+      "position": {
+        "x": -80,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church3-withcarpet",
+      "id": "platform-solid-Church3-withcarpet",
+      "position": {
+        "x": -69,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-ossuary",
+      "id": "platform-solid-ossuary",
+      "position": {
+        "x": -58,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Santos",
+      "id": "platform-solid-Santos",
+      "position": {
+        "x": -47,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Boss Ossary",
+      "id": "platform-solid-Boss Ossary",
+      "position": {
+        "x": -36,
+        "y": 16.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand",
+      "id": "platform-solid-TheHolyLand",
+      "position": {
+        "x": -102,
+        "y": 19.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand2",
+      "id": "platform-solid-TheHolyLand2",
+      "position": {
+        "x": -91,
+        "y": 19.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand3",
+      "id": "platform-solid-TheHolyLand3",
+      "position": {
+        "x": -80,
+        "y": 19.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "shelf01",
+      "id": "shelf01",
+      "position": {
+        "x": -69,
+        "y": 19.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "shelf02",
+      "id": "shelf02",
+      "position": {
+        "x": -58,
+        "y": 19.5,
+        "z": 0
+      }
+    },
+    {
+      "type": "shelf03",
+      "id": "shelf03",
+      "position": {
+        "x": -47,
+        "y": 19.5,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}
