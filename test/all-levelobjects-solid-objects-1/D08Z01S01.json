@@ -1,0 +1,411 @@
+{
+  "additions": [
+    {
+      "type": "platform-solid-brotherhood1",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood2",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -94.286,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood3",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -88.571,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood4",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -82.857,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood5",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -77.143,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood6",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -71.429,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-brotherhood-slope",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -65.714,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church1",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church2",
+      "id": "test_levelobject_9",
+      "position": {
+        "x": -54.286,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church3",
+      "id": "test_levelobject_10",
+      "position": {
+        "x": -48.571,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-SewerpuzzleReward",
+      "id": "test_levelobject_11",
+      "position": {
+        "x": -42.857,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Church3-withcarpet",
+      "id": "test_levelobject_12",
+      "position": {
+        "x": -37.143,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-ossuary",
+      "id": "test_levelobject_13",
+      "position": {
+        "x": -31.429,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Santos",
+      "id": "test_levelobject_14",
+      "position": {
+        "x": -25.714,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Santos-1",
+      "id": "test_levelobject_15",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Boss Ossary",
+      "id": "test_levelobject_16",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand",
+      "id": "test_levelobject_17",
+      "position": {
+        "x": -94.286,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand2",
+      "id": "test_levelobject_18",
+      "position": {
+        "x": -88.571,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand3",
+      "id": "test_levelobject_19",
+      "position": {
+        "x": -82.857,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand4",
+      "id": "test_levelobject_20",
+      "position": {
+        "x": -77.143,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Village",
+      "id": "test_levelobject_21",
+      "position": {
+        "x": -71.429,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-aerbeiluo",
+      "id": "test_levelobject_22",
+      "position": {
+        "x": -65.714,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-village-woodenfloor",
+      "id": "test_levelobject_23",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-village-cavestone",
+      "id": "test_levelobject_24",
+      "position": {
+        "x": -54.286,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-floor-in-teleport",
+      "id": "test_levelobject_25",
+      "position": {
+        "x": -48.571,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor",
+      "id": "test_levelobject_26",
+      "position": {
+        "x": -42.857,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor-1",
+      "id": "test_levelobject_27",
+      "position": {
+        "x": -37.143,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor2",
+      "id": "test_levelobject_28",
+      "position": {
+        "x": -31.429,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-trunkfloor",
+      "id": "test_levelobject_29",
+      "position": {
+        "x": -25.714,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor-inside-house",
+      "id": "test_levelobject_30",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor-inside-house-1",
+      "id": "test_levelobject_31",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor3",
+      "id": "test_levelobject_32",
+      "position": {
+        "x": -94.286,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-wasteLand-floor4",
+      "id": "test_levelobject_33",
+      "position": {
+        "x": -88.571,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Blood",
+      "id": "test_levelobject_34",
+      "position": {
+        "x": -82.857,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-MercyDreams-Stairs",
+      "id": "test_levelobject_35",
+      "position": {
+        "x": -77.143,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-MercyDreams-Stairs-1",
+      "id": "test_levelobject_36",
+      "position": {
+        "x": -71.429,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-MercyDreams-Stairs-2",
+      "id": "test_levelobject_37",
+      "position": {
+        "x": -65.714,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-MercyDreams-Boss",
+      "id": "test_levelobject_38",
+      "position": {
+        "x": -60.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Sheng-Rong",
+      "id": "test_levelobject_39",
+      "position": {
+        "x": -54.286,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Cristern1",
+      "id": "test_levelobject_40",
+      "position": {
+        "x": -48.571,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Cristern1(附件)",
+      "id": "test_levelobject_41",
+      "position": {
+        "x": -42.857,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Cristern2",
+      "id": "test_levelobject_42",
+      "position": {
+        "x": -37.143,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-电梯井",
+      "id": "test_levelobject_43",
+      "position": {
+        "x": -31.429,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-水银提交处",
+      "id": "test_levelobject_44",
+      "position": {
+        "x": -25.714,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Jibrael's-Cave",
+      "id": "test_levelobject_45",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

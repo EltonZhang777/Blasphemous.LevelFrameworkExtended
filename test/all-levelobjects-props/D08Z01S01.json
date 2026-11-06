@@ -1,0 +1,33 @@
+{
+  "additions": [
+    {
+      "type": "Props-Church1",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Props-Church2",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Props-Church2-1",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -60.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

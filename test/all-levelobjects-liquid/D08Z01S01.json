@@ -1,0 +1,24 @@
+{
+  "additions": [
+    {
+      "type": "Liquid-Mud of TheHolyLand",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Liquid-Water of Cistern",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

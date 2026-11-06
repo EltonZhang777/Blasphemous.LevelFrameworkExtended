@@ -1,0 +1,222 @@
+{
+  "additions": [
+    {
+      "type": "bell-face",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "bell-face-1",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -88.571,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Trunk in the Wasteland",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -77.143,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Bell That can be broken and open some other doors or traps",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -65.714,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps Spike",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -54.286,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Turret",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -42.857,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Trap Sewage",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -31.429,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps Poison Mist",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps 开关-golden",
+      "id": "test_levelobject_9",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps OilPot",
+      "id": "test_levelobject_10",
+      "position": {
+        "x": -88.571,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps 滑索电梯",
+      "id": "test_levelobject_11",
+      "position": {
+        "x": -77.143,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps 滑索电梯（黑白）",
+      "id": "test_levelobject_12",
+      "position": {
+        "x": -65.714,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-香炉",
+      "id": "test_levelobject_13",
+      "position": {
+        "x": -54.286,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-超级无敌巨大香炉",
+      "id": "test_levelobject_14",
+      "position": {
+        "x": -42.857,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-Movable Platform",
+      "id": "test_levelobject_15",
+      "position": {
+        "x": -31.429,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-Ghost",
+      "id": "test_levelobject_16",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-book",
+      "id": "test_levelobject_17",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-Guillotine",
+      "id": "test_levelobject_18",
+      "position": {
+        "x": -88.571,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-Light in maze",
+      "id": "test_levelobject_19",
+      "position": {
+        "x": -77.143,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-ElectBall",
+      "id": "test_levelobject_20",
+      "position": {
+        "x": -65.714,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-ladder OPENER",
+      "id": "test_levelobject_21",
+      "position": {
+        "x": -54.286,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-ladder",
+      "id": "test_levelobject_22",
+      "position": {
+        "x": -42.857,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-Ship",
+      "id": "test_levelobject_23",
+      "position": {
+        "x": -31.429,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Traps-翻转王座",
+      "id": "test_levelobject_24",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

@@ -1,0 +1,348 @@
+{
+  "additions": [
+    {
+      "type": "platform-Ash Mount",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Ending Boss",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -93.333,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-boss-Ending2",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -86.667,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-boss-SisterBridge",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -80.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-boss-SisterBridge-1",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -73.333,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Tree1",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -66.667,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Tree2",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Dawn Room",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -53.333,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Dawn Room-1",
+      "id": "test_levelobject_9",
+      "position": {
+        "x": -46.667,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Tree2-1",
+      "id": "test_levelobject_10",
+      "position": {
+        "x": -40.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison1",
+      "id": "test_levelobject_11",
+      "position": {
+        "x": -33.333,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison2",
+      "id": "test_levelobject_12",
+      "position": {
+        "x": -26.667,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison3",
+      "id": "test_levelobject_13",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison4",
+      "id": "test_levelobject_14",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison-boss",
+      "id": "test_levelobject_15",
+      "position": {
+        "x": -93.333,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison5",
+      "id": "test_levelobject_16",
+      "position": {
+        "x": -86.667,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison5-1",
+      "id": "test_levelobject_17",
+      "position": {
+        "x": -80.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Prison5-2",
+      "id": "test_levelobject_18",
+      "position": {
+        "x": -73.333,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Dreamsea",
+      "id": "test_levelobject_19",
+      "position": {
+        "x": -66.667,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-竞技场1",
+      "id": "test_levelobject_20",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-竞技场1-1",
+      "id": "test_levelobject_21",
+      "position": {
+        "x": -53.333,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Maze of the sleeper1",
+      "id": "test_levelobject_22",
+      "position": {
+        "x": -46.667,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Maze of the sleeper2",
+      "id": "test_levelobject_23",
+      "position": {
+        "x": -40.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Maze of the sleeper3",
+      "id": "test_levelobject_24",
+      "position": {
+        "x": -33.333,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave1",
+      "id": "test_levelobject_25",
+      "position": {
+        "x": -26.667,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave2",
+      "id": "test_levelobject_26",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave3",
+      "id": "test_levelobject_27",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave4",
+      "id": "test_levelobject_28",
+      "position": {
+        "x": -92.727,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave5",
+      "id": "test_levelobject_29",
+      "position": {
+        "x": -85.455,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave-wooden1",
+      "id": "test_levelobject_30",
+      "position": {
+        "x": -78.182,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave-wooden2",
+      "id": "test_levelobject_31",
+      "position": {
+        "x": -70.909,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave-ship1-1",
+      "id": "test_levelobject_32",
+      "position": {
+        "x": -63.636,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-sea-cave-wooden",
+      "id": "test_levelobject_33",
+      "position": {
+        "x": -56.364,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Amanecidas1",
+      "id": "test_levelobject_34",
+      "position": {
+        "x": -49.091,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Amanecidas2",
+      "id": "test_levelobject_35",
+      "position": {
+        "x": -41.818,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Amanecidas3",
+      "id": "test_levelobject_36",
+      "position": {
+        "x": -34.545,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Amanecidas4",
+      "id": "test_levelobject_37",
+      "position": {
+        "x": -27.273,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-圣三一",
+      "id": "test_levelobject_38",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

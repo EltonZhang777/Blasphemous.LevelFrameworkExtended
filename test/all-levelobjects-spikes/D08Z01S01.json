@@ -1,0 +1,141 @@
+{
+  "additions": [
+    {
+      "type": "spikes-jondo-tiny",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-jondo",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -80.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-jondo-long",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-patio",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -40.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-canvases",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-rooftops",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-brotherhood",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -80.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-miriam",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-wasteland-inside-house",
+      "id": "test_levelobject_9",
+      "position": {
+        "x": -40.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-Mountain",
+      "id": "test_levelobject_10",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-jondo-1",
+      "id": "test_levelobject_11",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-Garden",
+      "id": "test_levelobject_12",
+      "position": {
+        "x": -80.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-Cemetery",
+      "id": "test_levelobject_13",
+      "position": {
+        "x": -60.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-Tower",
+      "id": "test_levelobject_14",
+      "position": {
+        "x": -40.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "spikes-Tower-1",
+      "id": "test_levelobject_15",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

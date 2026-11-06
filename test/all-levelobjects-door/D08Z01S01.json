@@ -1,0 +1,78 @@
+{
+  "additions": [
+    {
+      "type": "Door-Church",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-stone",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-brotherhood",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-aerbeiluo",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-inner-aerbeiluo",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-wallhole",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-aerbeiluo2",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "Door-地下",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

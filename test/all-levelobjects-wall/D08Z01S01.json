@@ -1,0 +1,33 @@
+{
+  "additions": [
+    {
+      "type": "Wall-Church1",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "Wall-Church2",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "Wall-Church3",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -60.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

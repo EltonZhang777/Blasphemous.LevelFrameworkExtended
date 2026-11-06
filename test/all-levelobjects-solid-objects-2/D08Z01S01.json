@@ -1,0 +1,411 @@
+{
+  "additions": [
+    {
+      "type": "platform-solid-Mountain1",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Mountain1-Wooden1",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -94.286,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-Mountain1-Wooden1-1",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -88.571,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-三结秘舌-横置",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -82.857,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-ice-cave",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -77.143,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Mountain-Underground",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -71.429,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Mountain-Underground2",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -65.714,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard-Wodden",
+      "id": "test_levelobject_9",
+      "position": {
+        "x": -54.286,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard2",
+      "id": "test_levelobject_10",
+      "position": {
+        "x": -48.571,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard3",
+      "id": "test_levelobject_11",
+      "position": {
+        "x": -42.857,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard-elevator",
+      "id": "test_levelobject_12",
+      "position": {
+        "x": -37.143,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard-elevator-1",
+      "id": "test_levelobject_13",
+      "position": {
+        "x": -31.429,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Vertical Graveryard-elevator-2",
+      "id": "test_levelobject_14",
+      "position": {
+        "x": -25.714,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Convent",
+      "id": "test_levelobject_15",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Convent-wooden1",
+      "id": "test_levelobject_16",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Convent-wooden2",
+      "id": "test_levelobject_17",
+      "position": {
+        "x": -94.286,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-TheBorder",
+      "id": "test_levelobject_18",
+      "position": {
+        "x": -88.571,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-TheBorder2",
+      "id": "test_levelobject_19",
+      "position": {
+        "x": -82.857,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-TheBorder3",
+      "id": "test_levelobject_20",
+      "position": {
+        "x": -77.143,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-TheBorder-1",
+      "id": "test_levelobject_21",
+      "position": {
+        "x": -71.429,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Moveable in TheBorder",
+      "id": "test_levelobject_22",
+      "position": {
+        "x": -65.714,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-descent",
+      "id": "test_levelobject_23",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-descent-1",
+      "id": "test_levelobject_24",
+      "position": {
+        "x": -54.286,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-不知道是啥玩意",
+      "id": "test_levelobject_25",
+      "position": {
+        "x": -48.571,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Garden",
+      "id": "test_levelobject_26",
+      "position": {
+        "x": -42.857,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Garden-1",
+      "id": "test_levelobject_27",
+      "position": {
+        "x": -37.143,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Garden-2",
+      "id": "test_levelobject_28",
+      "position": {
+        "x": -31.429,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Archcathedral",
+      "id": "test_levelobject_29",
+      "position": {
+        "x": -25.714,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Archcathedral Boss-掘墓大主教",
+      "id": "test_levelobject_30",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-三结",
+      "id": "test_levelobject_31",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-跑酷DLC",
+      "id": "test_levelobject_32",
+      "position": {
+        "x": -94.286,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-跑酷DLC-1",
+      "id": "test_levelobject_33",
+      "position": {
+        "x": -88.571,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Library-wooden1",
+      "id": "test_levelobject_34",
+      "position": {
+        "x": -82.857,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Library-wooden2",
+      "id": "test_levelobject_35",
+      "position": {
+        "x": -77.143,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Library-stone",
+      "id": "test_levelobject_36",
+      "position": {
+        "x": -71.429,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Cemetery",
+      "id": "test_levelobject_37",
+      "position": {
+        "x": -65.714,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Cemetery2",
+      "id": "test_levelobject_38",
+      "position": {
+        "x": -60.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop1",
+      "id": "test_levelobject_39",
+      "position": {
+        "x": -54.286,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop-大电梯",
+      "id": "test_levelobject_40",
+      "position": {
+        "x": -48.571,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop2",
+      "id": "test_levelobject_41",
+      "position": {
+        "x": -42.857,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop3",
+      "id": "test_levelobject_42",
+      "position": {
+        "x": -37.143,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop3-1",
+      "id": "test_levelobject_43",
+      "position": {
+        "x": -31.429,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop3-2",
+      "id": "test_levelobject_44",
+      "position": {
+        "x": -25.714,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-Rooftop4-up",
+      "id": "test_levelobject_45",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

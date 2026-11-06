@@ -1,0 +1,114 @@
+{
+  "additions": [
+    {
+      "type": "Shopkeeper",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "捐钱处",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -73.333,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "祭坛",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -46.667,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "teleport",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "teleport-1",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "predieu",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -73.333,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "蜡烛后面的石像",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -46.667,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "boss战帮手",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "赎罪雕像",
+      "id": "test_levelobject_9",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "水银哥",
+      "id": "test_levelobject_10",
+      "position": {
+        "x": -73.333,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "加血",
+      "id": "test_levelobject_11",
+      "position": {
+        "x": -46.667,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "加蓝",
+      "id": "test_levelobject_12",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}
