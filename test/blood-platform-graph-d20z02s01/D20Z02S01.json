@@ -1,0 +1,35 @@
+{
+  "additions": [
+    {
+      "type": "platform-blood-graph",
+      "id": "blood-graph-smoke",
+      "properties": [
+        "node = entry-a; position = [520, -145, 0]",
+        "node = entry-b; position = [520, -152, 0]",
+        "node = branch; position = [535, -145, 0]; rotation = [0, 0, 15]",
+        "node = merge; position = [550, -152, 0]; scale = [1.2, 0.8, 1]",
+        "initial = entry-a",
+        "initial = entry-b",
+        "edge = entry-a --> branch",
+        "edge = entry-b --> branch",
+        "edge = branch --> merge",
+        "edge = merge --> entry-a"
+      ]
+    },
+    {
+      "type": "platform-blood",
+      "id": "ordinary-to-merge",
+      "position": {
+        "x": 560,
+        "y": -145,
+        "z": 0
+      },
+      "properties": [
+        "false",
+        "merge"
+      ]
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

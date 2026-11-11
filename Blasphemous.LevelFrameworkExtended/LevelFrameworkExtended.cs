@@ -140,5 +140,7 @@ public class LevelFrameworkExtended : BlasMod
     {
         foreach (LevelObject entry in _creators)
             entry.Register(provider);
+
+        BloodPlatformGraphCreator.Register(provider);
     }
 }
