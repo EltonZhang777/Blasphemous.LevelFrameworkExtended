@@ -1,0 +1,78 @@
+{
+  "additions": [
+    {
+      "type": "platform-droppable-library",
+      "id": "test_levelobject_1",
+      "position": {
+        "x": -100.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-brotherhood",
+      "id": "test_levelobject_2",
+      "position": {
+        "x": -60.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-Verdical-Graveryard",
+      "id": "test_levelobject_3",
+      "position": {
+        "x": -20.0,
+        "y": 10,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-Theborder",
+      "id": "test_levelobject_4",
+      "position": {
+        "x": -100.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-Theborder2",
+      "id": "test_levelobject_5",
+      "position": {
+        "x": -60.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-Garden",
+      "id": "test_levelobject_6",
+      "position": {
+        "x": -20.0,
+        "y": 13,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-Garden2",
+      "id": "test_levelobject_7",
+      "position": {
+        "x": -100.0,
+        "y": 16,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-droppable-Garden-1",
+      "id": "test_levelobject_8",
+      "position": {
+        "x": -20.0,
+        "y": 16,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}
