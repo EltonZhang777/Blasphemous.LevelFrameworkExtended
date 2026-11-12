@@ -71,6 +71,9 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-droppable-brotherhood",
             new SceneLoader("D17Z01S04_DECO", "MIDDLEGROUND/AfterPlayer/Floor/brotherhood-spritesheet_41"),
             new ColliderModifer("OneWayDown", new Vector2(2f, 1f), new Vector2(0f, -0.3f))),
+        new LevelObject("platform-blood-graph",
+            new BloodPlatformGraphTemplate(),
+            new BloodPlatformGraphModifier()),
         #endregion Droppable Platforms
 
         #region Solid Objects
