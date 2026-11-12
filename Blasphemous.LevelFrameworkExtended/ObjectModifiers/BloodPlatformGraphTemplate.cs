@@ -9,6 +9,8 @@ namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers;
 /// </summary>
 public class BloodPlatformGraphTemplate : ILoader
 {
+    internal static GameObject Current { get; private set; }
+
     private readonly SceneLoader _loader = new("D17Z01S10_LOGIC", "LOGIC/INTERACTABLES/{0}");
 
     /// <inheritdoc/>
@@ -21,6 +23,4 @@ public class BloodPlatformGraphTemplate : ILoader
         Result = _loader.Result;
         Current = Result;
     }
-
-    internal static GameObject Current { get; private set; }
 }

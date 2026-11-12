@@ -10,21 +10,15 @@ namespace Blasphemous.LevelFrameworkExtended.ObjectModifiers.Properties;
 /// </summary>
 public sealed class BloodPlatformGraph
 {
-    private readonly Dictionary<string, BloodPlatformNode> _nodes;
-
     /// <summary>Nodes in declaration order.</summary>
     public List<BloodPlatformNode> Nodes { get; }
-    /// <summary>Initial node IDs in declaration order.</summary>
-    public List<string> Initial { get; }
     /// <summary>Graph batch label used in diagnostics.</summary>
     public string Batch { get; }
 
-    private BloodPlatformGraph(string batch, List<BloodPlatformNode> nodes, List<string> initial)
+    private BloodPlatformGraph(string batch, List<BloodPlatformNode> nodes)
     {
         Batch = string.IsNullOrEmpty(batch) ? "<unnamed>" : batch;
         Nodes = nodes;
-        Initial = initial;
-        _nodes = nodes.ToDictionary(node => node.Id, StringComparer.Ordinal);
     }
 
     /// <summary>
@@ -44,7 +38,7 @@ public sealed class BloodPlatformGraph
         }
 
         Validate(nodes, initials, edges, batch);
-        return new BloodPlatformGraph(batch, nodes, initials);
+        return new BloodPlatformGraph(batch, nodes);
     }
 
     private static void ParseDeclaration(
@@ -68,7 +62,7 @@ public sealed class BloodPlatformGraph
         switch (kind)
         {
             case "node":
-                nodes.Add(ParseNode(value, context, batch, index));
+                nodes.Add(ParseNode(value, context, batch));
                 break;
             case "initial":
                 initials.Add(ParseId(value, context, batch, "initial declaration"));
@@ -81,15 +75,13 @@ public sealed class BloodPlatformGraph
         }
     }
 
-    private static BloodPlatformNode ParseNode(string value, string context, string batch, int index)
+    private static BloodPlatformNode ParseNode(string value, string context, string batch)
     {
         if (value.Trim().Length == 0)
             throw Error(batch, context, "node declaration is missing its node ID");
         string id = ParseId(value.Split(';')[0], context, batch, "node declaration");
         context = $"node '{id}' ({context})";
         string[] fields = SplitFields(value, context, batch);
-        if (fields.Length == 0)
-            throw Error(batch, context, "node declaration is missing its node ID");
 
         HashSet<string> seen = new(StringComparer.Ordinal);
         Vector3Data position = Vector3Data.Zero;
@@ -125,7 +117,7 @@ public sealed class BloodPlatformGraph
             }
         }
 
-        return new BloodPlatformNode(id, index, position, rotation, scale);
+        return new BloodPlatformNode(id, position, rotation, scale);
     }
 
     private static GraphEdge ParseEdge(string value, string context, string batch)
@@ -177,6 +169,8 @@ public sealed class BloodPlatformGraph
         {
             if (!float.TryParse(parts[i], NumberStyles.Float, CultureInfo.InvariantCulture, out numbers[i]))
                 throw Error(batch, context, $"{field} '{value}' contains a non-number '{parts[i]}'");
+            if (float.IsNaN(numbers[i]) || float.IsInfinity(numbers[i]))
+                throw Error(batch, context, $"{field} '{value}' contains a non-finite number '{parts[i]}'");
         }
 
         return new Vector3Data(numbers[0], numbers[1], numbers[2]);
@@ -201,11 +195,8 @@ public sealed class BloodPlatformGraph
             byId.Add(node.Id, node);
         }
 
-        HashSet<string> initialSeen = new(StringComparer.Ordinal);
         foreach (string initial in initials)
         {
-            if (!initialSeen.Add(initial))
-                throw Error(batch, $"initial '{initial}'", "duplicate initial declaration");
             if (!byId.ContainsKey(initial))
                 throw Error(batch, $"initial '{initial}'", "undefined node");
             BloodPlatformNode node = byId[initial];
@@ -263,10 +254,10 @@ public sealed class BloodPlatformGraph
 /// <summary>A declared platform node and its directed outgoing links.</summary>
 public sealed class BloodPlatformNode
 {
+    internal readonly List<string> _targets = [];
+
     /// <summary>Node ID, also used as the platform instance name.</summary>
     public string Id { get; }
-    /// <summary>Zero-based declaration index.</summary>
-    public int Index { get; }
     /// <summary>Absolute node position.</summary>
     public Vector3Data Position { get; }
     /// <summary>Node Euler rotation.</summary>
@@ -278,17 +269,13 @@ public sealed class BloodPlatformNode
     /// <summary>Outgoing target node IDs in edge declaration order.</summary>
     public List<string> Targets => _targets;
 
-    internal List<string> _targets = [];
-
     internal BloodPlatformNode(
         string id,
-        int index,
         Vector3Data position,
         Vector3Data rotation,
         Vector3Data scale)
     {
         Id = id;
-        Index = index;
         Position = position;
         Rotation = rotation;
         Scale = scale;

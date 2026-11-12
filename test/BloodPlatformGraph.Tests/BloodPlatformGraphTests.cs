@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using Xunit;
 
-namespace LevelFrameworkExtended.BloodPlatformGraphTests;
+namespace Blasphemous.LevelFrameworkExtended.BloodPlatformGraphTests;
 
 public class BloodPlatformGraphTests
 {
@@ -22,7 +22,6 @@ public class BloodPlatformGraphTests
         Assert.Equal(Vector3Data.Zero, a.Rotation);
         Assert.Equal(Vector3Data.One, a.Scale);
         Assert.Equal("b", Assert.Single(a.Targets));
-        Assert.Contains("a", graph.Initial);
         Assert.True(a.IsInitial);
     }
 
@@ -52,10 +51,10 @@ public class BloodPlatformGraphTests
             "edge=a --> b",
             "edge=b --> c");
 
-        Assert.Equal(2, graph.Initial.Count);
         BloodPlatformNode a = graph.Nodes.First(node => node.Id == "a");
         BloodPlatformNode b = graph.Nodes.First(node => node.Id == "b");
         BloodPlatformNode c = graph.Nodes.First(node => node.Id == "c");
+        Assert.Equal(2, graph.Nodes.Count(node => node.IsInitial));
         Assert.True(a.IsInitial);
         Assert.True(b.IsInitial);
         Assert.False(c.IsInitial);
@@ -117,9 +116,10 @@ public class BloodPlatformGraphTests
     }
 
     [Fact]
-    public void RejectDuplicateInitial()
+    public void AllowRepeatedInitial()
     {
-        AssertGraphError(new[] { "node=a", "initial=a", "initial=a" }, "initial 'a'", "duplicate initial");
+        BloodPlatformGraph graph = Parse("node=a", "initial=a", "initial=a");
+        Assert.True(Assert.Single(graph.Nodes).IsInitial);
     }
 
     [Fact]
@@ -194,6 +194,15 @@ public class BloodPlatformGraphTests
     public void RejectVectorWithWrongArityOrNonNumber(string declaration, string field, string detail)
     {
         AssertGraphError(new[] { declaration }, "node 'a'", field, detail);
+    }
+
+    [Theory]
+    [InlineData("NaN")]
+    [InlineData("Infinity")]
+    [InlineData("-Infinity")]
+    public void RejectNonFiniteVector(string value)
+    {
+        AssertGraphError(new[] { $"node=a; position=[{value},0,0]" }, "node 'a'", "position", "non-finite");
     }
 
     [Fact]
