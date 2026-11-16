@@ -42,7 +42,8 @@ public class ColliderModifer : FillableObjectModifier, IModifier
 
         obj.name = $"{data.id}";
         obj.layer = LayerMask.NameToLayer(_layer);
-        BoxCollider2D collider = obj.AddComponent<BoxCollider2D>();
+        BoxCollider2D collider = obj.GetComponent<BoxCollider2D>()
+            ?? obj.AddComponent<BoxCollider2D>();
         collider.size = _size;
         collider.offset = _offset;
 

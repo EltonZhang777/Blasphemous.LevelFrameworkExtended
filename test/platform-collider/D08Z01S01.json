@@ -1,0 +1,24 @@
+{
+  "additions": [
+    {
+      "type": "platform-Rooftop-大电梯",
+      "id": "test_rooftop_elevator",
+      "position": {
+        "x": -80.0,
+        "y": -22,
+        "z": 0
+      }
+    },
+    {
+      "type": "platform-solid-TheHolyLand3",
+      "id": "test_oneway_added_collider",
+      "position": {
+        "x": -69.0,
+        "y": 12.0,
+        "z": 0
+      }
+    }
+  ],
+  "modifications": [],
+  "deletions": []
+}

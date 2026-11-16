@@ -132,9 +132,9 @@ public class LevelFrameworkExtended : BlasMod
         new LevelObject("platform-solid-TheHolyLand3",
             new SceneLoader("D01Z01S01_DECO", "MIDDLEGROUND/AfterPlayer/Floor/forest-spritesheet_1"),
             new ColliderModifer("OneWayDown", new Vector2(1, 1), new Vector2(0f, -0.3f))),
-
-
-
+        new LevelObject("platform-Rooftop-大电梯",
+            new SceneLoader("D06Z01S01_LOGIC", "LOGIC/ACT_BridgeElevator"),
+            new ColliderModifer("Floor", new Vector2(12f, 6f), new Vector2(2f, -3f))),
         #endregion Solid Objects
         //Dalin's work
         //Wip:ShelfModifer
